@@ -1,14 +1,13 @@
 import {lazy, FC, Suspense} from 'react'
 import {Route, Routes, Navigate} from 'react-router-dom'
-import {MasterLayout} from '../../_metronic/layout/MasterLayout'
+import {MasterLayout} from '../../config/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
 import {MenuTestPage} from '../pages/MenuTestPage'
-import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
-import {WithChildren} from '../../_metronic/helpers'
-import {DashboardWrapper} from "../pages/dashboard/DashboardWrapper";
+import {getCSSVariableValue} from '../../config/assets/ts/_utils'
+import {WithChildren} from '../../config/helpers'
+import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
 
 const PrivateRoutes = () => {
-
   return (
     <Routes>
       <Route element={<MasterLayout />}>

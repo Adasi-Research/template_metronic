@@ -1,16 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {FC} from 'react'
-import {useIntl} from 'react-intl'
-import {toAbsoluteUrl} from '../../../_metronic/helpers'
-import {PageTitle} from '../../../_metronic/layout/core'
+import {FC} from 'react';
+import {useIntl} from 'react-intl';
+import {PageTitle} from '../../../config/layout/core';
+import {useAppDispatch, useAppSelector} from '../../../config/hooks/useRedux';
+import {Button} from 'react-bootstrap';
+import {increment, incrementByAmount} from '../../../config/store/dashboard/counterSlice';
 
 const DashboardWrapper: FC = () => {
-  const intl = useIntl()
+  const intl = useIntl();
+
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <PageTitle breadcrumbs={[]}>{intl.formatMessage({id: 'MENU.DASHBOARD'})}</PageTitle>
+      <Button onClick={() => dispatch(incrementByAmount(25))}>{count}</Button>
     </>
-  )
-}
+  );
+};
 
-export {DashboardWrapper}
+export {DashboardWrapper};
