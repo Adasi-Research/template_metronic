@@ -7,6 +7,8 @@ interface CounterState {
   value: number;
 }
 
+interface Teste extends PayloadAction<number> {}
+
 // Define the initial state using that type
 const initialState: CounterState = {
   value: 0,
@@ -24,7 +26,7 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
+    incrementByAmount: (state, action: Teste) => {
       state.value += action.payload;
     },
   },
