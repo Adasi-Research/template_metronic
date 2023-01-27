@@ -18,6 +18,7 @@ import {AppRoutes} from './app/routing/AppRoutes';
 import {AuthProvider, setupAxios} from './app/modules/authExample';
 import {Provider} from 'react-redux';
 import {store} from './config/store';
+import ErrorBoundary from "./config/layout/ErrorBoundary";
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic Metronic mocks and returns it.
@@ -36,6 +37,7 @@ const queryClient = new QueryClient();
 const container = document.getElementById('root');
 if (container) {
   createRoot(container).render(
+      <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <MetronicI18nProvider>
@@ -46,5 +48,6 @@ if (container) {
         <ReactQueryDevtools initialIsOpen={false} />
       </Provider>
     </QueryClientProvider>
+      </ErrorBoundary>
   );
 }
