@@ -10,6 +10,7 @@ export default {
   argTypes: {
     placeholder: {control: ''},
     value: {control: ''},
+    classprops: {control: ''},
   },
 } as ComponentMeta<typeof Input>
 
@@ -19,6 +20,8 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 export const InputBase = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 InputBase.args = {
-  placeholder: 'Opa testando aqui',
-  value: 'ABCDEFGH',
+  placeholder: '',
+  value: '',
+  classprops: '',
+  type: '',
 }

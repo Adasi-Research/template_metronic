@@ -30,5 +30,9 @@ Primary.args = {
   utilityP: 10,
   utilityPY: 10,
   utilityPX: 10,
-  children: <p>Oiiii</p>,
+  children: (
+    <div style={{backgroundColor: 'white', padding: '50px', fontSize: '32px'}}>
+      <p>Oiii</p>
+    </div>
+  ),
 }

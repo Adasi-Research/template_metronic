@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
+import clsx from 'clsx'
+import {Form} from 'react-bootstrap'
 
 interface InputProps {
   /**
@@ -8,15 +10,29 @@ interface InputProps {
   /**
    * Optional click handler
    */
-  onChange?: () => void
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   /*
    * Optional value prop
    * */
   value?: string
+  classprops: string
+  type: string
 }
 
-const Input = ({value, onChange, placeholder, ...props}: InputProps) => {
-  return <input value={value} placeholder={placeholder} />
+const Input = ({type, onChange, placeholder, classprops, ...props}: InputProps) => {
+  const [inputValue, setInputValue] = useState('')
+
+  return (
+    <input
+      type='email'
+      onChange={(e) => setInputValue(e.target.value)}
+      value={inputValue}
+      placeholder={placeholder}
+      className={clsx(`form-control ${classprops}`)}
+      name='email'
+      autoComplete='off'
+    />
+  )
 }
 
 export default Input
