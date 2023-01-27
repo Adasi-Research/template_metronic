@@ -15,7 +15,7 @@ import './config/assets/sass/style.scss';
 import './config/assets/sass/plugins.scss';
 import './config/assets/sass/style.react.scss';
 import {AppRoutes} from './app/routing/AppRoutes';
-import {AuthProvider, setupAxios} from './app/modules/auth';
+import {AuthProvider, setupAxios} from './app/modules/authExample';
 import {Provider} from 'react-redux';
 import {store} from './config/store';
 /**
