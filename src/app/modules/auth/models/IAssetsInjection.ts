@@ -1,5 +1,5 @@
 export interface IAssetsInjection {
-    readonly pathBackground: string;
+    pathBackground: string;
+    pathLogo: string;
 
-    getUsers(): string
 }
