@@ -8,6 +8,7 @@ import {useFormik} from 'formik'
 import {toAbsoluteUrl} from '../../../../../config/helpers'
 import {IUser} from "../../models/IUser";
 import {useContainers} from "../../containers";
+import {useQuery} from "react-query";
 // import {useAuth} from '../core/Auth'
 
 const loginSchema = Yup.object().shape({
@@ -39,20 +40,11 @@ export function Login() {
     // const {saveAuth, setCurrentUser} = useAuth()
     const {AuthRequests} = useContainers();
 
-    const register = async () => {
-        setUser(await AuthRequests.register({
-            email: 'teste@gmail.com',
-            firstname: 'Jonatass',
-            lastname: 'teste',
-            password: '102030'
-        }))
+    const handleLogin = async () => {
+        AuthRequests.login('teste', '102030').then((res) => {
+            return res
+        })
     }
-
-    useEffect(() => {
-        register().then(_ => {
-            return null
-        });
-    }, [])
 
     const formik = useFormik({
         initialValues,
@@ -84,7 +76,7 @@ export function Login() {
             {/* begin::Heading */}
             <div className='text-center mb-11'>
                 <h1 className='text-dark fw-bolder mb-3'>{user?.firstname}</h1>
-                <div className='text-gray-500 fw-semibold fs-6'>Your Social Campaigns {AuthRequests.value}</div>
+                <div className='text-gray-500 fw-semibold fs-6'>Your Social Campaigns </div>
             </div>
             {/* begin::Heading */}
 
@@ -221,10 +213,10 @@ export function Login() {
                 <button
                     type='button'
                     onClick={() => {
-                        AuthRequests.login()
+                        handleLogin()
                     }}
                     id='kt_sign_in_submit'
-                    className='btn btn-primary'
+                    className={`btn btn-primary ${AuthRequests.loading ? 'disabled' : null}`}
                     disabled={formik.isSubmitting || !formik.isValid}
                 >
                     {!loading && <span className='indicator-label'>Continue</span>}

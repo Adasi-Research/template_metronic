@@ -1,14 +1,10 @@
 import {RequestsInjections} from "./_requests";
-import {LoginWithJavaApi} from "../pages/Login/service-login";
 import {toAbsoluteUrl} from "../../../../config/helpers";
 import {IAssetsInjection} from "../models/IAssetsInjection";
-import {IComponents} from "../models/IComponents";
+import {AuthServices} from "../../../../config/services/auth-services";
 
-interface Props {
-    title: string,
-}
 export const useContainers = () => {
-    const AuthRequests = new RequestsInjections(new LoginWithJavaApi());
+    const AuthRequests = new RequestsInjections(new AuthServices());
 
     const Assets: IAssetsInjection = {
         pathBackground: toAbsoluteUrl('/media/logos/custom-1.png'),
