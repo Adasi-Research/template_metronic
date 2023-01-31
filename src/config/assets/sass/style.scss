@@ -12,3 +12,58 @@
 // Layout
 @import './core/layout/base/layout';
 @import 'layout/layout';
+
+[data-bs-theme='dark'] .rdt_Table {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableRow {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableCol {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableCol_Sortable {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableCell {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableHeader {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableFooter {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableHead {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableHeadRow {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_TableBody {
+  background-color: #0c020d !important;
+  color: white;
+}
+
+[data-bs-theme='dark'] .rdt_ExpanderRow {
+  background-color: #0c020d !important;
+  color: white;
+}

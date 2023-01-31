@@ -64,7 +64,7 @@ const DashboardWrapper: FC = () => {
       year: '2022',
     },
     {
-      title: 'Oi',
+      title: 'Oi z',
       director: 'Amigo',
       year: '2022',
     },
@@ -74,6 +74,7 @@ const DashboardWrapper: FC = () => {
     {
       name: 'Title',
       selector: (row) => row.title,
+      sortable: true,
     },
     {
       name: 'Director',
@@ -91,39 +92,7 @@ const DashboardWrapper: FC = () => {
       <Button onClick={() => dispatch(incrementByAmount(25))}>{count}</Button>
       <Button onClick={() => dispatch(increment())}>{count}</Button>
       <Button onClick={() => dispatch(decrement())}>{count}</Button>
-      <DataTable
-        columns={columns}
-        data={data}
-        customStyles={{
-          rows: {
-            style: {
-              minHeight: '72px',
-              backgroundColor: 'transparent !important',
-            },
-          },
-          headCells: {
-            style: {
-              paddingLeft: '8px', // override the cell padding for head cells
-              paddingRight: '8px',
-              background: 'transparent !important',
-            },
-          },
-          table: {
-            style: {
-              paddingLeft: '8px', // override the cell padding for head cells
-              paddingRight: '8px',
-              background: config.app?.toolbar?.fixed?.desktop ? 'transparent !important' : 'red',
-            },
-          },
-          cells: {
-            style: {
-              paddingLeft: '8px', // override the cell padding for data cells
-              paddingRight: '8px',
-              background: 'transparent !important',
-            },
-          },
-        }}
-      />
+      <DataTable columns={columns} data={data} />
     </>
   );
 };
