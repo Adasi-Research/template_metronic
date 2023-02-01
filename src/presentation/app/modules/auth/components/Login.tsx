@@ -6,6 +6,7 @@ import { useFormik } from 'formik'
 import { getUserByToken, login } from '../core/_requests'
 import { toAbsoluteUrl } from '../../../../config/helpers'
 import { useAuth } from '../core/Auth'
+import { type Authentication } from '@/domain/usecases'
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -31,13 +32,28 @@ const initialValues = {
 */
 
 interface PropsLogin {
-  authentication: any
+  authentication: Authentication
   validation: any
 }
 
 export function Login ({ authentication, validation }: PropsLogin): JSX.Element {
   const [loading, setLoading] = useState(false)
   const { saveAuth, setCurrentUser } = useAuth()
+  console.log()
+
+  const handleSubmit = (): void => {
+    authentication
+      .auth({
+        email: 'alvesjonatas99@gmail.com',
+        password: '102030'
+      })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   const formik = useFormik({
     initialValues,
@@ -206,9 +222,10 @@ export function Login ({ authentication, validation }: PropsLogin): JSX.Element 
       {/* begin::Action */}
       <div className='d-grid mb-10'>
         <button
-          type='submit'
+          type='button'
           id='kt_sign_in_submit'
           className='btn btn-primary'
+          onClick={handleSubmit}
           disabled={formik.isSubmitting || !formik.isValid}
         >
           {!loading && <span className='indicator-label'>Continue</span>}
