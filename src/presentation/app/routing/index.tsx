@@ -11,6 +11,7 @@ import { PrivateRoutes } from './PrivateRoutes'
 import { ErrorsPage } from '../modules/errors/ErrorsPage'
 import { AuthPage, Logout, useAuth } from '../modules/auth'
 import { App } from '../App'
+import { makeLogin } from '@/main/factories/modules/auth/login.factory'
 
 /**
  * Base URL of the website.
@@ -19,10 +20,7 @@ import { App } from '../App'
  */
 const { PUBLIC_URL } = process.env
 
-type Props = {
-  makeLogin: any
-}
-export const Router = ({ makeLogin }: Props): JSX.Element => {
+export const Router = (): JSX.Element => {
   const { currentUser } = useAuth()
   return (
     <BrowserRouter basename={PUBLIC_URL}>

@@ -42,7 +42,7 @@ if (container) {
       <Provider store={store}>
         <MetronicI18nProvider>
           <AuthProvider>
-            <Router makeLogin={makeLogin}/>
+            <Router />
           </AuthProvider>
         </MetronicI18nProvider>
         <ReactQueryDevtools initialIsOpen={false} />
