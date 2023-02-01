@@ -1,24 +1,24 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
 // Axios
-import axios from 'axios';
-import { Chart, registerables } from 'chart.js';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import axios from 'axios'
+import { Chart, registerables } from 'chart.js'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 // Apps
-import { MetronicI18nProvider } from './config/i18n/Metronici18n';
+import { MetronicI18nProvider } from './config/i18n/Metronici18n'
 /**
  * TIP: Replace this style import with rtl styles to enable rtl mode
  *
  * import './config/assets/css/style.rtl.css'
  **/
-import './config/assets/sass/style.scss';
-import './config/assets/sass/plugins.scss';
-import './config/assets/sass/style.react.scss';
-import { AppRoutes } from './app/routing/AppRoutes';
-import { AuthProvider, setupAxios } from './app/modules/auth';
-import { Provider } from 'react-redux';
-import { store } from './config/store';
+import './config/assets/sass/style.scss'
+import './config/assets/sass/plugins.scss'
+import './config/assets/sass/style.react.scss'
+import { AppRoutes } from './app/routing/AppRoutes'
+import { AuthProvider, setupAxios } from './app/modules/auth'
+import { Provider } from 'react-redux'
+import { store } from './config/store'
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic Metronic mocks and returns it.
