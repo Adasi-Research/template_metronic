@@ -22,6 +22,8 @@ const { PUBLIC_URL } = process.env
 
 export const Router = (): JSX.Element => {
   const { currentUser } = useAuth()
+
+  console.log(currentUser)
   return (
     <BrowserRouter basename={PUBLIC_URL}>
       <Routes>

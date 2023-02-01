@@ -1,9 +1,7 @@
-import React from 'react'
-import { type FC, Suspense } from 'react'
+import React, { type FC, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MasterLayout } from '../../config/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
-import { MenuTestPage } from '../pages/MenuTestPage'
 import { getCSSVariableValue } from '../../config/assets/ts/_utils'
 import { type WithChildren } from '../../config/helpers'
 import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
@@ -16,7 +14,6 @@ const PrivateRoutes = () => {
         <Route path='auth/*' element={<Navigate to='/dashboard' />} />
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
-        <Route path='menu-test' element={<MenuTestPage />} />
         {/* Lazy Modules */}
 
         {/* Page Not Found */}

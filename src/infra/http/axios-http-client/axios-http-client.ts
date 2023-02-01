@@ -1,6 +1,8 @@
 import { type HttpPostClient, type HttpPostParams, type HttpResponse } from '@/data/protocols/http'
 import axios, { type AxiosResponse } from 'axios'
 
+axios.defaults.baseURL = 'https://www.adasi.dev/usesus/api'
+
 export class AxiosHttpClient implements HttpPostClient<any, any> {
   async post (params: HttpPostParams<any>): Promise<HttpResponse<any>> {
     let httpResponse: AxiosResponse

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Registration } from './components/Registration'
-import { ForgotPassword } from './components/ForgotPassword'
+import { Registration } from '../pages/Registration'
+import { ForgotPassword } from '../pages/ForgotPassword'
 import { AuthLayout } from './AuthLayout'
 
 type Props = {

@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect } from 'react'
-import { Outlet, Link } from 'react-router-dom'
-import { toAbsoluteUrl } from '../../../config/helpers'
+import React, { useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom'
+import { toAbsoluteUrl } from '../../../../config/helpers'
 
 const AuthLayout = () => {
   useEffect(() => {
@@ -34,15 +33,15 @@ const AuthLayout = () => {
         <div className='d-flex flex-center flex-wrap px-5'>
           {/* begin::Links */}
           <div className='d-flex fw-semibold text-primary fs-base'>
-            <a href='src/presentation/app/modules/auth#' className='px-5' target='_blank'>
+            <a href='@/presentation/app/modules/auth#' className='px-5' target='_blank'>
               Terms
             </a>
 
-            <a href='src/presentation/app/modules/auth#' className='px-5' target='_blank'>
+            <a href='@/presentation/app/modules/auth#' className='px-5' target='_blank'>
               Plans
             </a>
 
-            <a href='src/presentation/app/modules/auth#' className='px-5' target='_blank'>
+            <a href='@/presentation/app/modules/auth#' className='px-5' target='_blank'>
               Contact Us
             </a>
           </div>
@@ -82,12 +81,18 @@ const AuthLayout = () => {
           {/* begin::Text */}
           <div className='text-white fs-base text-center'>
             In this kind of post,{' '}
-            <a href='src/presentation/app/modules/auth#' className='opacity-75-hover text-warning fw-bold me-1'>
+            <a
+              href='@/presentation/app/modules/auth#'
+              className='opacity-75-hover text-warning fw-bold me-1'
+            >
               the blogger
             </a>
             introduces a person they’ve interviewed <br /> and provides some background information
             about
-            <a href='src/presentation/app/modules/auth#' className='opacity-75-hover text-warning fw-bold me-1'>
+            <a
+              href='@/presentation/app/modules/auth#'
+              className='opacity-75-hover text-warning fw-bold me-1'
+            >
               the interviewee
             </a>
             and their <br /> work following this is a transcript of the interview.

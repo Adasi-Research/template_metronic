@@ -10,7 +10,6 @@ import { type Authentication } from '@/domain/usecases'
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
-    .email('Wrong email format')
     .min(3, 'Minimum 3 symbols')
     .max(50, 'Maximum 50 symbols')
     .required('Email is required'),
@@ -21,8 +20,8 @@ const loginSchema = Yup.object().shape({
 })
 
 const initialValues = {
-  email: 'admin@demo.com',
-  password: 'demo'
+  email: '',
+  password: ''
 }
 
 /*
@@ -38,19 +37,32 @@ interface PropsLogin {
 export function Login ({ authentication }: PropsLogin): JSX.Element {
   const [loading, setLoading] = useState(false)
   const { saveAuth, setCurrentUser } = useAuth()
-  console.log()
 
   const handleSubmit = (): void => {
+    setLoading(true)
     authentication
       .auth({
-        email: 'alvesjonatas99@gmail.com',
-        password: '102030'
+        username: formik.values.email,
+        password: formik.values.password
       })
       .then((res) => {
-        console.log(res)
+        saveAuth({
+          api_token: res.accessToken
+        })
+
+        setCurrentUser({
+          id: 1,
+          username: 'Jonatas',
+          password: 'asjdoias',
+          email: 'asdasdasda@gmail.com',
+          first_name: 'Jonatas',
+          last_name: 'Alves'
+        })
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err)
+        setLoading(false)
       })
   }
 
@@ -65,7 +77,6 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
         const { data: user } = await getUserByToken(auth.api_token)
         setCurrentUser(user)
       } catch (error) {
-        console.error(error)
         saveAuth(undefined)
         setStatus('The login details are incorrect')
         setSubmitting(false)
@@ -141,24 +152,23 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
 
       {formik.status
         ? (
-        <div className='mb-lg-15 alert alert-danger'>
-          <div className='alert-text font-weight-bold'>{formik.status}</div>
-        </div>
+          <div className='mb-lg-15 alert alert-danger'>
+            <div className='alert-text font-weight-bold'>{formik.status}</div>
+          </div>
           )
         : (
-        <div className='mb-10 bg-light-info p-8 rounded'>
-          <div className='text-info'>
-            Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to
-            continue.
+          <div className='mb-10 bg-light-info p-8 rounded'>
+            <div className='text-info'>
+              Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to
+              continue.
+            </div>
           </div>
-        </div>
           )}
 
       {/* begin::Form group */}
       <div className='fv-row mb-8'>
         <label className='form-label fs-6 fw-bolder text-dark'>Email</label>
         <input
-          placeholder='Email'
           {...formik.getFieldProps('email')}
           className={clsx(
             'form-control bg-transparent',
