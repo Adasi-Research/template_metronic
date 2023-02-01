@@ -1,9 +1,8 @@
-const { DefinePlugin } = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -15,16 +14,13 @@ module.exports = merge(common, {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(s(a|c)ss)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
+            loader: 'css-loader'
           },
           {
             loader: 'sass-loader'
@@ -36,14 +32,9 @@ module.exports = merge(common, {
   externals: {
     react: 'React',
     axios: 'axios',
-    recoil: 'Recoil',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM'
+    'react-dom': 'ReactDOM'
   },
   plugins: [
-    new DefinePlugin({
-      'process.env.API_URL': JSON.stringify('https://fordevs.herokuapp.com/api')
-    }),
     new HtmlWebpackPlugin({
       template: './template.prod.html'
     }),
@@ -54,4 +45,4 @@ module.exports = merge(common, {
       logo: './public/favicon.png'
     })
   ]
-})
+});
