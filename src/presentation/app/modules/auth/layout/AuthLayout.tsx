@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import { toAbsoluteUrl } from '../../../../config/helpers'
+import React, {useEffect} from 'react';
+import {Link, Outlet} from 'react-router-dom';
+import {toAbsoluteUrl} from '../../../../config/helpers';
 
 const AuthLayout = () => {
   useEffect(() => {
-    const root = document.getElementById('root')
+    const root = document.getElementById('root');
     if (root) {
-      root.style.height = '100%'
+      root.style.height = '100%';
     }
     return () => {
       if (root) {
-        root.style.height = 'auto'
+        root.style.height = 'auto';
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div className='d-flex flex-column flex-lg-row flex-column-fluid h-100'>
@@ -54,7 +54,7 @@ const AuthLayout = () => {
       {/* begin::Aside */}
       <div
         className='d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 order-lg-2'
-        style={{ backgroundImage: `url(${toAbsoluteUrl('/media/misc/auth-bg.png')})` }}
+        style={{backgroundImage: `url(${toAbsoluteUrl('/media/misc/auth-bg.png')})`}}
       >
         {/* begin::Content */}
         <div className='d-flex flex-column flex-center py-15 px-5 px-md-15 w-100'>
@@ -103,7 +103,7 @@ const AuthLayout = () => {
       </div>
       {/* end::Aside */}
     </div>
-  )
-}
+  );
+};
 
-export { AuthLayout }
+export {AuthLayout};

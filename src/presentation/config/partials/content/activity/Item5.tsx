@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC } from 'react'
-import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import {type FC} from 'react';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
 
 const Item5: FC = () => {
   return (
@@ -47,7 +47,10 @@ const Item5: FC = () => {
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
+                <a
+                  href='src/presentation/config/partials/content/activity#'
+                  className='btn btn-sm btn-primary btn-shadow'
+                >
                   Explore
                 </a>
               </div>
@@ -63,7 +66,10 @@ const Item5: FC = () => {
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
+                <a
+                  href='src/presentation/config/partials/content/activity#'
+                  className='btn btn-sm btn-primary btn-shadow'
+                >
                   Explore
                 </a>
               </div>
@@ -79,7 +85,10 @@ const Item5: FC = () => {
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
+                <a
+                  href='src/presentation/config/partials/content/activity#'
+                  className='btn btn-sm btn-primary btn-shadow'
+                >
                   Explore
                 </a>
               </div>
@@ -88,7 +97,7 @@ const Item5: FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Item5 }
+export {Item5};

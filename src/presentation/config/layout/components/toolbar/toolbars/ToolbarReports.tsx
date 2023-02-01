@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect, useState } from 'react'
-import { KTSVG } from '../../../../helpers'
+import {useEffect, useState} from 'react';
+import {KTSVG} from '../../../../helpers';
 
 const ToolbarReports = () => {
-  const [progress, setProgress] = useState<string>('1')
+  const [progress, setProgress] = useState<string>('1');
 
   useEffect(() => {
-    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true')
-  }, [])
+    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true');
+  }, []);
 
   return (
     <div className='d-flex align-items-center overflow-auto'>
@@ -74,7 +74,9 @@ const ToolbarReports = () => {
           data-placeholder='Latest'
           data-hide-search='true'
           value={progress}
-          onChange={(e) => { setProgress(e.target.value) }}
+          onChange={(e) => {
+            setProgress(e.target.value);
+          }}
         >
           <option value=''></option>
           <option value='1'>Latest</option>
@@ -115,7 +117,7 @@ const ToolbarReports = () => {
       </div>
       {/* end::Wrapper */}
     </div>
-  )
-}
+  );
+};
 
-export { ToolbarReports }
+export {ToolbarReports};

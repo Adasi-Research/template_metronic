@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC } from 'react'
-import { Link } from 'react-router-dom'
-import { useAuth } from '../../../../app/modules/auth'
-import { Languages } from './Languages'
-import { toAbsoluteUrl } from '../../../helpers'
+import {type FC} from 'react';
+import {Link} from 'react-router-dom';
+import {useAuth} from '../../../../app/modules/auth';
+import {Languages} from './Languages';
+import {toAbsoluteUrl} from '../../../helpers';
 
 const HeaderUserMenu: FC = () => {
-  const { currentUser, logout } = useAuth()
+  const {currentUser, logout} = useAuth();
   return (
     <div
       className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px'
@@ -23,7 +23,10 @@ const HeaderUserMenu: FC = () => {
               {currentUser?.first_name} {currentUser?.first_name}
               <span className='badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2'>Pro</span>
             </div>
-            <a href='src/presentation/config/partials/layout/header-menus#' className='fw-bold text-muted text-hover-primary fs-7'>
+            <a
+              href='src/presentation/config/partials/layout/header-menus#'
+              className='fw-bold text-muted text-hover-primary fs-7'
+            >
               {currentUser?.email}
             </a>
           </div>
@@ -60,25 +63,37 @@ const HeaderUserMenu: FC = () => {
 
         <div className='menu-sub menu-sub-dropdown w-175px py-4'>
           <div className='menu-item px-3'>
-            <a href='src/presentation/config/partials/layout/header-menus#' className='menu-link px-5'>
+            <a
+              href='src/presentation/config/partials/layout/header-menus#'
+              className='menu-link px-5'
+            >
               Referrals
             </a>
           </div>
 
           <div className='menu-item px-3'>
-            <a href='src/presentation/config/partials/layout/header-menus#' className='menu-link px-5'>
+            <a
+              href='src/presentation/config/partials/layout/header-menus#'
+              className='menu-link px-5'
+            >
               Billing
             </a>
           </div>
 
           <div className='menu-item px-3'>
-            <a href='src/presentation/config/partials/layout/header-menus#' className='menu-link px-5'>
+            <a
+              href='src/presentation/config/partials/layout/header-menus#'
+              className='menu-link px-5'
+            >
               Payments
             </a>
           </div>
 
           <div className='menu-item px-3'>
-            <a href='src/presentation/config/partials/layout/header-menus#' className='menu-link d-flex flex-stack px-5'>
+            <a
+              href='src/presentation/config/partials/layout/header-menus#'
+              className='menu-link d-flex flex-stack px-5'
+            >
               Statements
               <i
                 className='fas fa-exclamation-circle ms-2 fs-7'
@@ -129,7 +144,7 @@ const HeaderUserMenu: FC = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { HeaderUserMenu }
+export {HeaderUserMenu};

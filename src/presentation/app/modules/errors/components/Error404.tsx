@@ -1,6 +1,6 @@
-import { type FC } from 'react'
-import { Link } from 'react-router-dom'
-import { toAbsoluteUrl } from '../../../../config/helpers'
+import {type FC} from 'react';
+import {Link} from 'react-router-dom';
+import {toAbsoluteUrl} from '../../../../config/helpers';
 
 const Error404: FC = () => {
   return (
@@ -36,7 +36,7 @@ const Error404: FC = () => {
       </div>
       {/* end::Link */}
     </>
-  )
-}
+  );
+};
 
-export { Error404 }
+export {Error404};

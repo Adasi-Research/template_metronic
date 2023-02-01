@@ -3,15 +3,15 @@
 //
 
 // Initialize
-@import "init";
+@import 'init';
 
 // Components
-@import "core/components/components";
-@import "components/components";
+@import 'core/components/components';
+@import 'components/components';
 
 // Layout
-@import "core/layout/base/layout";
-@import "layout/layout";
+@import 'core/layout/base/layout';
+@import 'layout/layout';
 
 html {
   height: 100%;
@@ -24,4 +24,3 @@ body {
 main#main {
   height: 100%; /* remove this line to see div.app is no more 100% height */
 }
-

@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import * as Yup from 'yup'
-import clsx from 'clsx'
-import { Link } from 'react-router-dom'
-import { useFormik } from 'formik'
-import { getUserByToken, login } from '../core/_requests'
-import { toAbsoluteUrl } from '../../../../config/helpers'
-import { useAuth } from '../core/Auth'
-import { type Authentication } from '@/domain/usecases'
+import React, {useState} from 'react';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import {Link} from 'react-router-dom';
+import {useFormik} from 'formik';
+import {getUserByToken, login} from '../core/_requests';
+import {toAbsoluteUrl} from '../../../../config/helpers';
+import {useAuth} from '../core/Auth';
+import {type Authentication} from '@/domain/usecases';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -16,13 +16,13 @@ const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(3, 'Minimum 3 symbols')
     .max(50, 'Maximum 50 symbols')
-    .required('Password is required')
-})
+    .required('Password is required'),
+});
 
 const initialValues = {
   email: '',
-  password: ''
-}
+  password: '',
+};
 
 /*
   Formik+YUP+Typescript:
@@ -31,24 +31,24 @@ const initialValues = {
 */
 
 interface PropsLogin {
-  authentication: Authentication
+  authentication: Authentication;
 }
 
-export function Login ({ authentication }: PropsLogin): JSX.Element {
-  const [loading, setLoading] = useState(false)
-  const { saveAuth, setCurrentUser } = useAuth()
+export function Login({authentication}: PropsLogin): JSX.Element {
+  const [loading, setLoading] = useState(false);
+  const {saveAuth, setCurrentUser} = useAuth();
 
   const handleSubmit = (): void => {
-    setLoading(true)
+    setLoading(true);
     authentication
       .auth({
         username: formik.values.email,
-        password: formik.values.password
+        password: formik.values.password,
       })
       .then((res) => {
         saveAuth({
-          api_token: res.accessToken
-        })
+          api_token: res.accessToken,
+        });
 
         setCurrentUser({
           id: 1,
@@ -56,34 +56,34 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
           password: 'asjdoias',
           email: 'asdasdasda@gmail.com',
           first_name: 'Jonatas',
-          last_name: 'Alves'
-        })
-        setLoading(false)
+          last_name: 'Alves',
+        });
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err)
-        setLoading(false)
-      })
-  }
+        console.log(err);
+        setLoading(false);
+      });
+  };
 
   const formik = useFormik({
     initialValues,
     validationSchema: loginSchema,
-    onSubmit: async (values, { setStatus, setSubmitting }) => {
-      setLoading(true)
+    onSubmit: async (values, {setStatus, setSubmitting}) => {
+      setLoading(true);
       try {
-        const { data: auth } = await login(values.email, values.password)
-        saveAuth(auth)
-        const { data: user } = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
+        const {data: auth} = await login(values.email, values.password);
+        saveAuth(auth);
+        const {data: user} = await getUserByToken(auth.api_token);
+        setCurrentUser(user);
       } catch (error) {
-        saveAuth(undefined)
-        setStatus('The login details are incorrect')
-        setSubmitting(false)
-        setLoading(false)
+        saveAuth(undefined);
+        setStatus('The login details are incorrect');
+        setSubmitting(false);
+        setLoading(false);
       }
-    }
-  })
+    },
+  });
 
   return (
     <form
@@ -150,20 +150,18 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
       </div>
       {/* end::Separator */}
 
-      {formik.status
-        ? (
-          <div className='mb-lg-15 alert alert-danger'>
-            <div className='alert-text font-weight-bold'>{formik.status}</div>
+      {formik.status ? (
+        <div className='mb-lg-15 alert alert-danger'>
+          <div className='alert-text font-weight-bold'>{formik.status}</div>
+        </div>
+      ) : (
+        <div className='mb-10 bg-light-info p-8 rounded'>
+          <div className='text-info'>
+            Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to
+            continue.
           </div>
-          )
-        : (
-          <div className='mb-10 bg-light-info p-8 rounded'>
-            <div className='text-info'>
-              Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to
-              continue.
-            </div>
-          </div>
-          )}
+        </div>
+      )}
 
       {/* begin::Form group */}
       <div className='fv-row mb-8'>
@@ -172,9 +170,9 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
           {...formik.getFieldProps('email')}
           className={clsx(
             'form-control bg-transparent',
-            { 'is-invalid': formik.touched.email && formik.errors.email },
+            {'is-invalid': formik.touched.email && formik.errors.email},
             {
-              'is-valid': formik.touched.email && !formik.errors.email
+              'is-valid': formik.touched.email && !formik.errors.email,
             }
           )}
           type='email'
@@ -199,10 +197,10 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
           className={clsx(
             'form-control bg-transparent',
             {
-              'is-invalid': formik.touched.password && formik.errors.password
+              'is-invalid': formik.touched.password && formik.errors.password,
             },
             {
-              'is-valid': formik.touched.password && !formik.errors.password
+              'is-valid': formik.touched.password && !formik.errors.password,
             }
           )}
         />
@@ -239,7 +237,7 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
         >
           {!loading && <span className='indicator-label'>Continue</span>}
           {loading && (
-            <span className='indicator-progress' style={{ display: 'block' }}>
+            <span className='indicator-progress' style={{display: 'block'}}>
               Please wait...
               <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
             </span>
@@ -255,5 +253,5 @@ export function Login ({ authentication }: PropsLogin): JSX.Element {
         </Link>
       </div>
     </form>
-  )
+  );
 }

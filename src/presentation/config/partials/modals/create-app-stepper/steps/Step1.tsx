@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {KTSVG} from '../../../../helpers'
-import {StepProps} from '../IAppModels'
+import {KTSVG} from '../../../../helpers';
+import {StepProps} from '../IAppModels';
 
 const Step1 = ({data, updateData, hasError}: StepProps) => {
   return (
@@ -179,7 +179,7 @@ const Step1 = ({data, updateData, hasError}: StepProps) => {
         {/*end::Form Group */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export {Step1}
+export {Step1};

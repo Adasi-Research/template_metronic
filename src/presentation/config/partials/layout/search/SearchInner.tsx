@@ -1,8 +1,8 @@
-import {useState} from 'react'
-import {KTSVG} from '../../../helpers'
+import {useState} from 'react';
+import {KTSVG} from '../../../helpers';
 
 const SearchInner = () => {
-  const [search, setSearch] = useState<string>('')
+  const [search, setSearch] = useState<string>('');
   return (
     <div
       data-kt-search-element='content'
@@ -31,7 +31,7 @@ const SearchInner = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export {SearchInner}
+export {SearchInner};

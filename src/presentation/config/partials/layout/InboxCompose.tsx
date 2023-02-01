@@ -1,19 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useRef } from 'react'
-import { Modal } from 'react-bootstrap'
-import { KTSVG } from '../../helpers'
+import React, {useState, useRef} from 'react';
+import {Modal} from 'react-bootstrap';
+import {KTSVG} from '../../helpers';
 
 export type Props = {
-  show: boolean
-  handleClose: () => void
-}
+  show: boolean;
+  handleClose: () => void;
+};
 
-const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
-  const composeToRef = useRef<HTMLInputElement | null>(null)
-  const formRef = useRef<HTMLFormElement | null>(null)
-  const [composeCC, setComposeCC] = useState('')
-  const [composeBCC, setComposeBCC] = useState('')
-  const [subject, setSubject] = useState('')
+const InboxCompose: React.FC<Props> = ({show, handleClose}) => {
+  const composeToRef = useRef<HTMLInputElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [composeCC, setComposeCC] = useState('');
+  const [composeBCC, setComposeBCC] = useState('');
+  const [subject, setSubject] = useState('');
 
   return (
     <Modal
@@ -28,7 +28,13 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
     >
       <div className='modal-content'>
         {/* begin::Form */}
-        <form ref={formRef} id='kt_inbox_compose_form' onSubmit={() => { console.log('submit') }}>
+        <form
+          ref={formRef}
+          id='kt_inbox_compose_form'
+          onSubmit={() => {
+            console.log('submit');
+          }}
+        >
           {/* begin::Header */}
           <div className='d-flex align-items-center justify-content-between py-5 ps-8 pe-5 border-bottom'>
             <h5 className='fw-bold m-0'>Compose</h5>
@@ -85,7 +91,9 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                   className='form-control border-0'
                   name='compose_cc'
                   value={composeCC}
-                  onChange={(e) => { setComposeCC(e.target.value) }}
+                  onChange={(e) => {
+                    setComposeCC(e.target.value);
+                  }}
                 />
               </div>
               <span className='btn btn-active-light-primary btn-sm btn-icon' data-inbox='cc-hide'>
@@ -103,7 +111,9 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                   className='form-control border-0'
                   name='compose_bcc'
                   value={composeBCC}
-                  onChange={(e) => { setComposeBCC(e.target.value) }}
+                  onChange={(e) => {
+                    setComposeBCC(e.target.value);
+                  }}
                 />
               </div>
               <span className='btn btn-active-light-primary btn-sm btn-icon' data-inbox='bcc-hide'>
@@ -119,7 +129,9 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                 name='compose_subject'
                 placeholder='Subject'
                 value={subject}
-                onChange={(e) => { setSubject(e.target.value) }}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                }}
               />
             </div>
             {/* end::Subject */}
@@ -131,7 +143,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
             {/* begin::Attachments */}
             <div className='dropzone dropzone-multi px-8 py-4' id='kt_inbox_compose_attachments'>
               <div className='dropzone-items'>
-                <div className='dropzone-item' style={{ display: 'none' }}>
+                <div className='dropzone-item' style={{display: 'none'}}>
                   <div className='dropzone-file'>
                     <div className='dropzone-filename' title='some_image_file_name.jpg'>
                       <span data-dz-name>some_image_file_name.jpg</span>{' '}
@@ -191,7 +203,10 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
               >
                 <KTSVG className='svg-icon-1' path='/media/icons/duotune/files/fil022.svg' />
               </a>
-              <a href='src/presentation/config/partials/layout#' className='btn btn-icon btn-active-light-primary'>
+              <a
+                href='src/presentation/config/partials/layout#'
+                className='btn btn-icon btn-active-light-primary'
+              >
                 <KTSVG className='svg-icon-1' path='/media/icons/duotune/general/gen018.svg' />
               </a>
               {/* end::Other */}
@@ -215,7 +230,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
         {/* end::Form */}
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export { InboxCompose }
+export {InboxCompose};

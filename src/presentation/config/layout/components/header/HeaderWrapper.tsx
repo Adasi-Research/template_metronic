@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import clsx from 'clsx'
-import {Link} from 'react-router-dom'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {useLayout} from '../../core'
-import {Header} from './Header'
-import {Navbar} from './Navbar'
+import clsx from 'clsx';
+import {Link} from 'react-router-dom';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {useLayout} from '../../core';
+import {Header} from './Header';
+import {Navbar} from './Navbar';
 
 export function HeaderWrapper() {
-  const {config, classes} = useLayout()
+  const {config, classes} = useLayout();
   if (!config.app?.header?.display) {
-    return null
+    return null;
   }
 
   return (
@@ -96,5 +96,5 @@ export function HeaderWrapper() {
         </div>
       </div>
     </div>
-  )
+  );
 }

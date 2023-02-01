@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { type FC } from 'react'
-import { KTSVG } from '../../../helpers'
-import { ChatInner } from '../../chat/ChatInner'
+import React, {type FC} from 'react';
+import {KTSVG} from '../../../helpers';
+import {ChatInner} from '../../chat/ChatInner';
 
 const DrawerMessenger: FC = () => (
   <div
@@ -20,7 +20,10 @@ const DrawerMessenger: FC = () => (
       <div className='card-header pe-5' id='kt_drawer_chat_messenger_header'>
         <div className='card-title'>
           <div className='d-flex justify-content-center flex-column me-3'>
-            <a href='src/presentation/config/partials/layout/drawer-messenger#' className='fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1'>
+            <a
+              href='src/presentation/config/partials/layout/drawer-messenger#'
+              className='fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1'
+            >
               Brian Cox
             </a>
 
@@ -52,6 +55,6 @@ const DrawerMessenger: FC = () => (
       <ChatInner isDrawer={true} />
     </div>
   </div>
-)
+);
 
-export { DrawerMessenger }
+export {DrawerMessenger};

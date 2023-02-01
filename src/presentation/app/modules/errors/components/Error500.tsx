@@ -1,6 +1,6 @@
-import { type FC } from 'react'
-import { Link } from 'react-router-dom'
-import { toAbsoluteUrl } from '../../../../config/helpers'
+import {type FC} from 'react';
+import {Link} from 'react-router-dom';
+import {toAbsoluteUrl} from '../../../../config/helpers';
 
 const Error500: FC = () => {
   return (
@@ -38,7 +38,7 @@ const Error500: FC = () => {
       </div>
       {/* end::Link */}
     </>
-  )
-}
+  );
+};
 
-export { Error500 }
+export {Error500};

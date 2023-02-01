@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC } from 'react'
+import {type FC} from 'react';
 
 const Dropdown3: FC = () => {
   return (
@@ -18,7 +18,10 @@ const Dropdown3: FC = () => {
       </div>
 
       <div className='menu-item px-3'>
-        <a href='src/presentation/config/partials/content/dropdown#' className='menu-link flex-stack px-3'>
+        <a
+          href='src/presentation/config/partials/content/dropdown#'
+          className='menu-link flex-stack px-3'
+        >
           Create Payment
           <i
             className='fas fa-exclamation-circle ms-2 fs-7'
@@ -90,7 +93,7 @@ const Dropdown3: FC = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Dropdown3 }
+export {Dropdown3};

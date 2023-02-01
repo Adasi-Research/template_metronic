@@ -1,52 +1,52 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC, useState } from 'react'
-import clsx from 'clsx'
+import {type FC, useState} from 'react';
+import clsx from 'clsx';
 import {
   toAbsoluteUrl,
   defaultMessages,
   defaultUserInfos,
   type MessageModel,
   type UserInfoModel,
-  messageFromClient
-} from '../../helpers'
+  messageFromClient,
+} from '../../helpers';
 
 type Props = {
-  isDrawer?: boolean
-}
+  isDrawer?: boolean;
+};
 
-const bufferMessages = defaultMessages
+const bufferMessages = defaultMessages;
 
-const ChatInner: FC<Props> = ({ isDrawer = false }) => {
-  const [chatUpdateFlag, toggleChatUpdateFlat] = useState<boolean>(false)
-  const [message, setMessage] = useState<string>('')
-  const [messages, setMessages] = useState<MessageModel[]>(bufferMessages)
-  const [userInfos] = useState<UserInfoModel[]>(defaultUserInfos)
+const ChatInner: FC<Props> = ({isDrawer = false}) => {
+  const [chatUpdateFlag, toggleChatUpdateFlat] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>('');
+  const [messages, setMessages] = useState<MessageModel[]>(bufferMessages);
+  const [userInfos] = useState<UserInfoModel[]>(defaultUserInfos);
 
   const sendMessage = () => {
     const newMessage: MessageModel = {
       user: 2,
       type: 'out',
       text: message,
-      time: 'Just now'
-    }
+      time: 'Just now',
+    };
 
-    bufferMessages.push(newMessage)
-    setMessages(bufferMessages)
-    toggleChatUpdateFlat(!chatUpdateFlag)
-    setMessage('')
+    bufferMessages.push(newMessage);
+    setMessages(bufferMessages);
+    toggleChatUpdateFlat(!chatUpdateFlag);
+    setMessage('');
     setTimeout(() => {
-      bufferMessages.push(messageFromClient)
-      setMessages(() => bufferMessages)
-      toggleChatUpdateFlat((flag) => !flag)
-    }, 1000)
-  }
+      bufferMessages.push(messageFromClient);
+      setMessages(() => bufferMessages);
+      toggleChatUpdateFlat((flag) => !flag);
+    }, 1000);
+  };
 
   const onEnterPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.keyCode === 13 && !e.shiftKey) {
-      e.preventDefault()
-      sendMessage()
+      e.preventDefault();
+      sendMessage();
     }
-  }
+  };
 
   return (
     <div
@@ -54,7 +54,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
       id={isDrawer ? 'kt_drawer_chat_messenger_body' : 'kt_chat_messenger_body'}
     >
       <div
-        className={clsx('scroll-y me-n5 pe-5', { 'h-300px h-lg-auto': !isDrawer })}
+        className={clsx('scroll-y me-n5 pe-5', {'h-300px h-lg-auto': !isDrawer})}
         data-kt-element='messages'
         data-kt-scroll='true'
         data-kt-scroll-activate='{default: false, lg: true}'
@@ -65,26 +65,28 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
             : '#kt_header, #kt_app_header, #kt_app_toolbar, #kt_toolbar, #kt_footer, #kt_app_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer'
         }
         data-kt-scroll-wrappers={
-          isDrawer ? '#kt_drawer_chat_messenger_body' : '#kt_content, #kt_app_content, #kt_chat_messenger_body'
+          isDrawer
+            ? '#kt_drawer_chat_messenger_body'
+            : '#kt_content, #kt_app_content, #kt_chat_messenger_body'
         }
         data-kt-scroll-offset={isDrawer ? '0px' : '5px'}
       >
         {messages.map((message, index) => {
-          const userInfo = userInfos[message.user]
-          const state = message.type === 'in' ? 'info' : 'primary'
-          const templateAttr = {}
+          const userInfo = userInfos[message.user];
+          const state = message.type === 'in' ? 'info' : 'primary';
+          const templateAttr = {};
           if (message.template) {
             Object.defineProperty(templateAttr, 'data-kt-element', {
-              value: `template-${message.type}`
-            })
+              value: `template-${message.type}`,
+            });
           }
           const contentClass = `${isDrawer ? '' : 'd-flex'} justify-content-${
             message.type === 'in' ? 'start' : 'end'
-          } mb-10`
+          } mb-10`;
           return (
             <div
               key={`message${index}`}
-              className={clsx('d-flex', contentClass, 'mb-10', { 'd-none': message.template })}
+              className={clsx('d-flex', contentClass, 'mb-10', {'d-none': message.template})}
               {...templateAttr}
             >
               <div
@@ -94,8 +96,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                 )}
               >
                 <div className='d-flex align-items-center mb-2'>
-                  {message.type === 'in'
-                    ? (
+                  {message.type === 'in' ? (
                     <>
                       <div className='symbol  symbol-35px symbol-circle '>
                         <img alt='Pic' src={toAbsoluteUrl(`/media/${userInfo.avatar}`)} />
@@ -110,8 +111,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                         <span className='text-muted fs-7 mb-1'>{message.time}</span>
                       </div>
                     </>
-                      )
-                    : (
+                  ) : (
                     <>
                       <div className='me-3'>
                         <span className='text-muted fs-7 mb-1'>{message.time}</span>
@@ -126,7 +126,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                         <img alt='Pic' src={toAbsoluteUrl(`/media/${userInfo.avatar}`)} />
                       </div>
                     </>
-                      )}
+                  )}
                 </div>
 
                 <div
@@ -137,11 +137,11 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                     `text-${message.type === 'in' ? 'start' : 'end'}`
                   )}
                   data-kt-element='message-text'
-                  dangerouslySetInnerHTML={{ __html: message.text }}
+                  dangerouslySetInnerHTML={{__html: message.text}}
                 ></div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
 
@@ -155,7 +155,9 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
           data-kt-element='input'
           placeholder='Type a message'
           value={message}
-          onChange={(e) => { setMessage(e.target.value) }}
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
           onKeyDown={onEnterPress}
         ></textarea>
 
@@ -189,7 +191,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { ChatInner }
+export {ChatInner};

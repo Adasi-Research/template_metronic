@@ -1,27 +1,27 @@
-import {useEffect} from 'react'
-import {Outlet, useLocation} from 'react-router-dom'
-import {HeaderWrapper} from './components/header'
-import {RightToolbar} from '../partials/layout/RightToolbar'
-import {ScrollTop} from './components/scroll-top'
-import {Content} from './components/content'
-import {FooterWrapper} from './components/footer'
-import {Sidebar} from './components/sidebar'
+import {useEffect} from 'react';
+import {Outlet, useLocation} from 'react-router-dom';
+import {HeaderWrapper} from './components/header';
+import {RightToolbar} from '../partials/layout/RightToolbar';
+import {ScrollTop} from './components/scroll-top';
+import {Content} from './components/content';
+import {FooterWrapper} from './components/footer';
+import {Sidebar} from './components/sidebar';
 import {
   DrawerMessenger,
   ActivityDrawer,
   InviteUsers,
   UpgradePlan,
   ThemeModeProvider,
-} from '../partials'
-import {PageDataProvider} from './core'
-import {reInitMenu} from '../helpers'
-import {ToolbarWrapper} from './components/toolbar'
+} from '../partials';
+import {PageDataProvider} from './core';
+import {reInitMenu} from '../helpers';
+import {ToolbarWrapper} from './components/toolbar';
 
 const MasterLayout = () => {
-  const location = useLocation()
+  const location = useLocation();
   useEffect(() => {
-    reInitMenu()
-  }, [location.key])
+    reInitMenu();
+  }, [location.key]);
 
   return (
     <PageDataProvider>
@@ -57,7 +57,7 @@ const MasterLayout = () => {
         <ScrollTop />
       </ThemeModeProvider>
     </PageDataProvider>
-  )
-}
+  );
+};
 
-export {MasterLayout}
+export {MasterLayout};

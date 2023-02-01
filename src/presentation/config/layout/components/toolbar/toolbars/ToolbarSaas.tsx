@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC, useEffect, useState } from 'react'
-import { KTSVG } from '../../../../helpers'
+import {type FC, useEffect, useState} from 'react';
+import {KTSVG} from '../../../../helpers';
 
 const ToolbarSaas: FC = () => {
-  const [progress, setProgress] = useState<string>('1')
+  const [progress, setProgress] = useState<string>('1');
   useEffect(() => {
-    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true')
-  }, [])
+    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true');
+  }, []);
 
   return (
     <div className='d-flex align-items-center gap-2'>
@@ -24,7 +24,9 @@ const ToolbarSaas: FC = () => {
           data-control='select2'
           data-placeholder='Latest'
           data-hide-search='true'
-          onChange={(e) => { setProgress(e.target.value) }}
+          onChange={(e) => {
+            setProgress(e.target.value);
+          }}
           value={progress}
         >
           <option value=''></option>
@@ -120,7 +122,7 @@ const ToolbarSaas: FC = () => {
       </div>
       {/* end::Action wrapper */}
     </div>
-  )
-}
+  );
+};
 
-export { ToolbarSaas }
+export {ToolbarSaas};

@@ -1,4 +1,4 @@
-import {SidebarMenuMain} from './SidebarMenuMain'
+import {SidebarMenuMain} from './SidebarMenuMain';
 
 const SidebarMenu = () => {
   return (
@@ -24,7 +24,7 @@ const SidebarMenu = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export {SidebarMenu}
+export {SidebarMenu};

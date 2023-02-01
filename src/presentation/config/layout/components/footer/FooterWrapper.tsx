@@ -1,11 +1,11 @@
-import clsx from 'clsx'
-import {useLayout} from '../../core'
-import {Footer} from './Footer'
+import clsx from 'clsx';
+import {useLayout} from '../../core';
+import {Footer} from './Footer';
 
 const FooterWrapper = () => {
-  const {config} = useLayout()
+  const {config} = useLayout();
   if (!config.app?.footer?.display) {
-    return null
+    return null;
   }
 
   return (
@@ -18,7 +18,7 @@ const FooterWrapper = () => {
         <Footer />
       )}
     </div>
-  )
-}
+  );
+};
 
-export {FooterWrapper}
+export {FooterWrapper};

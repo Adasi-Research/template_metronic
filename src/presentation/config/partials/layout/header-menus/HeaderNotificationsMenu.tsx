@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx'
-import { type FC } from 'react'
-import { Link } from 'react-router-dom'
-import { KTSVG, toAbsoluteUrl, defaultAlerts, defaultLogs } from '../../../helpers'
+import clsx from 'clsx';
+import {type FC} from 'react';
+import {Link} from 'react-router-dom';
+import {KTSVG, toAbsoluteUrl, defaultAlerts, defaultLogs} from '../../../helpers';
 
 const HeaderNotificationsMenu: FC = () => (
   <div
@@ -11,7 +11,7 @@ const HeaderNotificationsMenu: FC = () => (
   >
     <div
       className='d-flex flex-column bgi-no-repeat rounded-top'
-      style={{ backgroundImage: `url('${toAbsoluteUrl('/media/misc/menu-header-bg.jpg')}')` }}
+      style={{backgroundImage: `url('${toAbsoluteUrl('/media/misc/menu-header-bg.jpg')}')`}}
     >
       <h3 className='text-white fw-bold px-9 mt-10 mb-6'>
         Notifications <span className='fs-8 opacity-75 ps-3'>24 reports</span>
@@ -67,7 +67,10 @@ const HeaderNotificationsMenu: FC = () => (
                 </div>
 
                 <div className='mb-0 me-2'>
-                  <a href='src/presentation/config/partials/layout/header-menus#' className='fs-6 text-gray-800 text-hover-primary fw-bolder'>
+                  <a
+                    href='src/presentation/config/partials/layout/header-menus#'
+                    className='fs-6 text-gray-800 text-hover-primary fw-bolder'
+                  >
                     {alert.title}
                   </a>
                   <div className='text-gray-400 fs-7'>{alert.description}</div>
@@ -129,7 +132,10 @@ const HeaderNotificationsMenu: FC = () => (
                   {log.code}
                 </span>
 
-                <a href='src/presentation/config/partials/layout/header-menus#' className='text-gray-800 text-hover-primary fw-bold'>
+                <a
+                  href='src/presentation/config/partials/layout/header-menus#'
+                  className='text-gray-800 text-hover-primary fw-bold'
+                >
                   {log.message}
                 </a>
 
@@ -149,6 +155,6 @@ const HeaderNotificationsMenu: FC = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export { HeaderNotificationsMenu }
+export {HeaderNotificationsMenu};

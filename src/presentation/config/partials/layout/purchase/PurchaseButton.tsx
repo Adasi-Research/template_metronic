@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC} from 'react';
 
 const PurchaseButton: FC = () => (
   <a
@@ -7,6 +7,6 @@ const PurchaseButton: FC = () => (
   >
     Buy Now
   </a>
-)
+);
 
-export {PurchaseButton}
+export {PurchaseButton};

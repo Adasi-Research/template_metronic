@@ -1,45 +1,45 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx'
-import { type FC } from 'react'
-import { toAbsoluteUrl } from '../../../helpers'
-import { useLang, setLanguage } from '../../../i18n/Metronici18n'
+import clsx from 'clsx';
+import {type FC} from 'react';
+import {toAbsoluteUrl} from '../../../helpers';
+import {useLang, setLanguage} from '../../../i18n/Metronici18n';
 
 const languages = [
   {
     lang: 'en',
     name: 'English',
-    flag: toAbsoluteUrl('/media/flags/united-states.svg')
+    flag: toAbsoluteUrl('/media/flags/united-states.svg'),
   },
   {
     lang: 'zh',
     name: 'Mandarin',
-    flag: toAbsoluteUrl('/media/flags/china.svg')
+    flag: toAbsoluteUrl('/media/flags/china.svg'),
   },
   {
     lang: 'es',
     name: 'Spanish',
-    flag: toAbsoluteUrl('/media/flags/spain.svg')
+    flag: toAbsoluteUrl('/media/flags/spain.svg'),
   },
   {
     lang: 'ja',
     name: 'Japanese',
-    flag: toAbsoluteUrl('/media/flags/japan.svg')
+    flag: toAbsoluteUrl('/media/flags/japan.svg'),
   },
   {
     lang: 'de',
     name: 'German',
-    flag: toAbsoluteUrl('/media/flags/germany.svg')
+    flag: toAbsoluteUrl('/media/flags/germany.svg'),
   },
   {
     lang: 'fr',
     name: 'French',
-    flag: toAbsoluteUrl('/media/flags/france.svg')
-  }
-]
+    flag: toAbsoluteUrl('/media/flags/france.svg'),
+  },
+];
 
 const Languages: FC = () => {
-  const lang = useLang()
-  const currentLanguage = languages.find((x) => x.lang === lang)
+  const lang = useLang();
+  const currentLanguage = languages.find((x) => x.lang === lang);
   return (
     <div
       className='menu-item px-5'
@@ -67,12 +67,12 @@ const Languages: FC = () => {
             className='menu-item px-3'
             key={l.lang}
             onClick={() => {
-              setLanguage(l.lang)
+              setLanguage(l.lang);
             }}
           >
             <a
               href='src/presentation/config/partials/layout/header-menus#'
-              className={clsx('menu-link d-flex px-5', { active: l.lang === currentLanguage?.lang })}
+              className={clsx('menu-link d-flex px-5', {active: l.lang === currentLanguage?.lang})}
             >
               <span className='symbol symbol-20px me-4'>
                 <img className='rounded-1' src={l.flag} alt='metronic' />
@@ -83,7 +83,7 @@ const Languages: FC = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Languages }
+export {Languages};

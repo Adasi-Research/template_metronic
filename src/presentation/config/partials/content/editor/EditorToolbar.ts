@@ -49,4 +49,4 @@ export const editorToolbarSettings = {
       width: 'auto',
     },
   },
-}
+};

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { type FC } from 'react'
-import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import React, {type FC} from 'react';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
 
 const InviteUsers: FC = () => {
   const users = [
@@ -8,105 +8,105 @@ const InviteUsers: FC = () => {
       avatar: '/media/avatars/300-6.jpg',
       name: 'Emma Smith',
       email: 'e.smith@kpmg.com.au',
-      access: '1'
+      access: '1',
     },
     {
       state: 'danger',
       name: 'Melody Macy',
       email: 'melody@altbox.com',
-      access: '1'
+      access: '1',
     },
     {
       avatar: '/media/avatars/300-1.jpg',
       name: 'Max Smith',
       email: 'max@kt.com',
-      access: '3'
+      access: '3',
     },
     {
       avatar: '/media/avatars/300-1.jpg',
       name: 'Sean Bean',
       email: 'sean@dellito.com',
-      access: '2'
+      access: '2',
     },
     {
       avatar: '/media/avatars/300-25.jpg',
       name: 'Brian Cox',
       email: 'brian@exchange.com',
-      access: '3'
+      access: '3',
     },
     {
       state: 'warning',
       name: 'Mikaela Collins',
       email: 'mikaela@pexcom.com',
-      access: '2'
+      access: '2',
     },
     {
       avatar: '/media/avatars/300-9.jpg',
       name: 'Francis Mitcham',
       email: 'f.mitcham@kpmg.com.au',
-      access: '3'
+      access: '3',
     },
     {
       state: 'danger',
       name: 'Olivia Wild',
       email: 'olivia@corpmail.com',
-      access: '2'
+      access: '2',
     },
     {
       state: 'info',
       name: 'Neil Owen',
       email: 'owen.neil@gmail.com',
-      access: '1'
+      access: '1',
     },
     {
       avatar: '/media/avatars/300-23.jpg',
       name: 'Dan Wilson',
       email: 'dam@consilting.com',
-      access: '3'
+      access: '3',
     },
     {
       state: 'danger',
       name: 'Emma Bold',
       email: 'emma@intenso.com',
-      access: '2'
+      access: '2',
     },
     {
       avatar: '/media/avatars/300-12.jpg',
       name: 'Ana Crown',
       email: 'ana.cf@limtel.com',
-      access: '1'
+      access: '1',
     },
     {
       state: 'primary',
       name: 'Robert Doe',
       email: 'robert@benko.com',
-      access: '3'
+      access: '3',
     },
     {
       avatar: '/media/avatars/300-13.jpg',
       name: 'John Miller',
       email: 'miller@mapple.com',
-      access: '3'
+      access: '3',
     },
     {
       state: 'success',
       name: 'Lucy Kunic',
       email: 'lucy.m@fentech.com',
-      access: '2'
+      access: '2',
     },
     {
       avatar: '/media/avatars/300-21.jpg',
       name: 'Ethan Wilder',
       email: 'ethan@loop.com.au',
-      access: '1'
+      access: '1',
     },
     {
       avatar: '/media/avatars/300-12.jpg',
       name: 'Ana Crown',
       email: 'ana.cf@limtel.com',
-      access: '3'
-    }
-  ]
+      access: '3',
+    },
+  ];
 
   return (
     <div className='modal fade' id='kt_modal_invite_friends' aria-hidden='true'>
@@ -124,7 +124,10 @@ const InviteUsers: FC = () => {
 
               <div className='text-muted fw-bold fs-5'>
                 If you need more info, please check out
-                <a href='src/presentation/config/partials/modals/invite-users#' className='link-primary fw-bolder'>
+                <a
+                  href='src/presentation/config/partials/modals/invite-users#'
+                  className='link-primary fw-bolder'
+                >
                   {' '}
                   FAQ Page
                 </a>
@@ -199,7 +202,7 @@ const InviteUsers: FC = () => {
                         </select>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -222,7 +225,7 @@ const InviteUsers: FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { InviteUsers }
+export {InviteUsers};

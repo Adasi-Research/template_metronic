@@ -1,58 +1,58 @@
-import React, {FC, useEffect, useRef, useState} from 'react'
-import {SearchComponent} from '../../../assets/ts/components'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
+import React, {FC, useEffect, useRef, useState} from 'react';
+import {SearchComponent} from '../../../assets/ts/components';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
 
 const Search: FC = () => {
-  const [menuState, setMenuState] = useState<'main' | 'advanced' | 'preferences'>('main')
-  const element = useRef<HTMLDivElement | null>(null)
-  const wrapperElement = useRef<HTMLDivElement | null>(null)
-  const resultsElement = useRef<HTMLDivElement | null>(null)
-  const suggestionsElement = useRef<HTMLDivElement | null>(null)
-  const emptyElement = useRef<HTMLDivElement | null>(null)
+  const [menuState, setMenuState] = useState<'main' | 'advanced' | 'preferences'>('main');
+  const element = useRef<HTMLDivElement | null>(null);
+  const wrapperElement = useRef<HTMLDivElement | null>(null);
+  const resultsElement = useRef<HTMLDivElement | null>(null);
+  const suggestionsElement = useRef<HTMLDivElement | null>(null);
+  const emptyElement = useRef<HTMLDivElement | null>(null);
 
   const processs = (search: SearchComponent) => {
     setTimeout(function () {
-      const number = Math.floor(Math.random() * 6) + 1
+      const number = Math.floor(Math.random() * 6) + 1;
 
       // Hide recently viewed
-      suggestionsElement.current!.classList.add('d-none')
+      suggestionsElement.current!.classList.add('d-none');
 
       if (number === 3) {
         // Hide results
-        resultsElement.current!.classList.add('d-none')
+        resultsElement.current!.classList.add('d-none');
         // Show empty message
-        emptyElement.current!.classList.remove('d-none')
+        emptyElement.current!.classList.remove('d-none');
       } else {
         // Show results
-        resultsElement.current!.classList.remove('d-none')
+        resultsElement.current!.classList.remove('d-none');
         // Hide empty message
-        emptyElement.current!.classList.add('d-none')
+        emptyElement.current!.classList.add('d-none');
       }
 
       // Complete search
-      search.complete()
-    }, 1500)
-  }
+      search.complete();
+    }, 1500);
+  };
 
   const clear = (search: SearchComponent) => {
     // Show recently viewed
-    suggestionsElement.current!.classList.remove('d-none')
+    suggestionsElement.current!.classList.remove('d-none');
     // Hide results
-    resultsElement.current!.classList.add('d-none')
+    resultsElement.current!.classList.add('d-none');
     // Hide empty message
-    emptyElement.current!.classList.add('d-none')
-  }
+    emptyElement.current!.classList.add('d-none');
+  };
 
   useEffect(() => {
     // Initialize search handler
-    const searchObject = SearchComponent.createInsance('#kt_header_search')
+    const searchObject = SearchComponent.createInsance('#kt_header_search');
 
     // Search handler
-    searchObject!.on('kt.search.process', processs)
+    searchObject!.on('kt.search.process', processs);
 
     // Clear handler
-    searchObject!.on('kt.search.clear', clear)
-  }, [])
+    searchObject!.on('kt.search.clear', clear);
+  }, []);
 
   return (
     <>
@@ -132,7 +132,7 @@ const Search: FC = () => {
                   className='btn btn-icon w-20px btn-sm btn-active-color-primary me-1'
                   data-bs-toggle='tooltip'
                   onClick={() => {
-                    setMenuState('preferences')
+                    setMenuState('preferences');
                   }}
                   title='Show search preferences'
                 >
@@ -144,7 +144,7 @@ const Search: FC = () => {
                   className='btn btn-icon w-20px btn-sm btn-active-color-primary'
                   data-bs-toggle='tooltip'
                   onClick={() => {
-                    setMenuState('advanced')
+                    setMenuState('advanced');
                   }}
                   title='Show more search options'
                 >
@@ -706,8 +706,8 @@ const Search: FC = () => {
             <div className='d-flex justify-content-end'>
               <button
                 onClick={(e) => {
-                  e.preventDefault()
-                  setMenuState('main')
+                  e.preventDefault();
+                  setMenuState('main');
                 }}
                 className='btn btn-sm btn-light fw-bolder btn-active-light-primary me-2'
               >
@@ -774,8 +774,8 @@ const Search: FC = () => {
             <div className='d-flex justify-content-end pt-7'>
               <button
                 onClick={(e) => {
-                  e.preventDefault()
-                  setMenuState('main')
+                  e.preventDefault();
+                  setMenuState('main');
                 }}
                 className='btn btn-sm btn-light fw-bolder btn-active-light-primary me-2'
               >
@@ -787,7 +787,7 @@ const Search: FC = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export {Search}
+export {Search};

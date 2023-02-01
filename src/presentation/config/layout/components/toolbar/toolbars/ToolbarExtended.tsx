@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC, useEffect, useState } from 'react'
-import { KTSVG, toAbsoluteUrl } from '../../../../helpers'
+import {type FC, useEffect, useState} from 'react';
+import {KTSVG, toAbsoluteUrl} from '../../../../helpers';
 
 const ToolbarExtended: FC = () => {
-  const [progress, setProgress] = useState<string>('1')
-  const [search, setSearch] = useState<string>('')
+  const [progress, setProgress] = useState<string>('1');
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
-    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true')
-  }, [])
+    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true');
+  }, []);
 
   return (
     <>
@@ -70,7 +70,10 @@ const ToolbarExtended: FC = () => {
           data-bs-trigger='hover'
           title='Invite a team member'
         >
-          <a href='src/presentation/config/layout/components/toolbar/toolbars#' className='btn btn-sm btn-icon'>
+          <a
+            href='src/presentation/config/layout/components/toolbar/toolbars#'
+            className='btn btn-sm btn-icon'
+          >
             <KTSVG
               path='/media/icons/duotune/general/gen035.svg'
               className='svg-icon-2hx svg-icon-success'
@@ -94,7 +97,9 @@ const ToolbarExtended: FC = () => {
             className='form-control form-control-sm form-control-solid w-150px ps-10'
             name='Search Team'
             value={search}
-            onChange={(e) => { setSearch(e.target.value) }}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
             placeholder='Search Team'
           />
         </div>
@@ -117,7 +122,9 @@ const ToolbarExtended: FC = () => {
           data-placeholder='Latest'
           data-hide-search='true'
           value={progress}
-          onChange={(e) => { setProgress(e.target.value) }}
+          onChange={(e) => {
+            setProgress(e.target.value);
+          }}
         >
           <option value=''></option>
           <option value='1'>Latest</option>
@@ -157,7 +164,7 @@ const ToolbarExtended: FC = () => {
         {/* end::Actions */}
       </div>
     </>
-  )
-}
+  );
+};
 
-export { ToolbarExtended }
+export {ToolbarExtended};

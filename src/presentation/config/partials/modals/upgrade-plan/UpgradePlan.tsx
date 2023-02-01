@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { type FC, useState } from 'react'
-import { KTSVG } from '../../../helpers'
+import React, {type FC, useState} from 'react';
+import {KTSVG} from '../../../helpers';
 
 const plans = [
   {
@@ -14,33 +14,33 @@ const plans = [
     features: [
       {
         title: 'Up to 10 Active Users',
-        supported: true
+        supported: true,
       },
       {
         title: 'Up to 30 Project Integrations',
-        supported: true
+        supported: true,
       },
       {
         title: 'Analytics Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Finance Module',
-        supported: false
+        supported: false,
       },
       {
         title: 'Accounting Module',
-        supported: false
+        supported: false,
       },
       {
         title: 'Network Platform',
-        supported: false
+        supported: false,
       },
       {
         title: 'Unlimited Cloud Space',
-        supported: false
-      }
-    ]
+        supported: false,
+      },
+    ],
   },
 
   {
@@ -54,33 +54,33 @@ const plans = [
     features: [
       {
         title: 'Up to 10 Active Users',
-        supported: true
+        supported: true,
       },
       {
         title: 'Up to 30 Project Integrations',
-        supported: true
+        supported: true,
       },
       {
         title: 'Analytics Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Finance Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Accounting Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Network Platform',
-        supported: false
+        supported: false,
       },
       {
         title: 'Unlimited Cloud Space',
-        supported: false
-      }
-    ]
+        supported: false,
+      },
+    ],
   },
 
   {
@@ -95,46 +95,46 @@ const plans = [
     features: [
       {
         title: 'Up to 10 Active Users',
-        supported: true
+        supported: true,
       },
       {
         title: 'Up to 30 Project Integrations',
-        supported: true
+        supported: true,
       },
       {
         title: 'Analytics Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Finance Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Accounting Module',
-        supported: true
+        supported: true,
       },
       {
         title: 'Network Platform',
-        supported: true
+        supported: true,
       },
       {
         title: 'Unlimited Cloud Space',
-        supported: true
-      }
-    ]
+        supported: true,
+      },
+    ],
   },
 
   {
     title: 'Custom',
     subTitle: 'Requet a custom license',
     default: false,
-    custom: true
-  }
-]
+    custom: true,
+  },
+];
 
 const UpgradePlan: FC = () => {
-  const [currentState, setCurrentState] = useState<'month' | 'annual'>('month')
-  const [selected, setSelected] = useState('Startup')
+  const [currentState, setCurrentState] = useState<'month' | 'annual'>('month');
+  const [selected, setSelected] = useState('Startup');
 
   return (
     <div className='modal fade' id='kt_modal_upgrade_plan' aria-hidden='true'>
@@ -152,7 +152,10 @@ const UpgradePlan: FC = () => {
 
               <div className='text-muted fw-bold fs-5'>
                 If you need more info, please check{' '}
-                <a href='src/presentation/config/partials/modals/upgrade-plan#' className='link-primary fw-bolder'>
+                <a
+                  href='src/presentation/config/partials/modals/upgrade-plan#'
+                  className='link-primary fw-bolder'
+                >
                   Pricing Guidelines
                 </a>
                 .
@@ -168,7 +171,7 @@ const UpgradePlan: FC = () => {
                     (currentState === 'month' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState('month')
+                    setCurrentState('month');
                   }}
                   data-kt-plan='month'
                 >
@@ -181,7 +184,7 @@ const UpgradePlan: FC = () => {
                     (currentState === 'annual' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState('annual')
+                    setCurrentState('annual');
                   }}
                   data-kt-plan='annual'
                 >
@@ -196,7 +199,7 @@ const UpgradePlan: FC = () => {
                       return (
                         <div
                           onClick={() => {
-                            setSelected(plan.title)
+                            setSelected(plan.title);
                           }}
                           className={
                             'nav-link btn btn-outline btn-outline-dashed btn-color-dark d-flex flex-stack text-start p-6 ' +
@@ -216,7 +219,9 @@ const UpgradePlan: FC = () => {
                                 name='plan'
                                 value={plan.title}
                                 checked={selected === plan.title}
-                                onChange={(e) => { setSelected(e.target.value) }}
+                                onChange={(e) => {
+                                  setSelected(e.target.value);
+                                }}
                               />
                             </div>
 
@@ -253,7 +258,7 @@ const UpgradePlan: FC = () => {
                             )}
                           </div>
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -310,14 +315,14 @@ const UpgradePlan: FC = () => {
                                           </>
                                         )}
                                       </div>
-                                    )
+                                    );
                                   })}
                                 </div>
                               </div>
                             </>
                           )}
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -337,7 +342,7 @@ const UpgradePlan: FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { UpgradePlan }
+export {UpgradePlan};

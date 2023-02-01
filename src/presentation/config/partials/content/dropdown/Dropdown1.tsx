@@ -75,5 +75,5 @@ export function Dropdown1() {
         </div>
       </div>
     </div>
-  )
+  );
 }

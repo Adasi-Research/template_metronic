@@ -1,5 +1,5 @@
-export * as KTUtil from './_utils'
-export * as components from './components'
+export * as KTUtil from './_utils';
+export * as components from './components';
 // declare global {
 //   interface Window {
 //     keenthemes: any;

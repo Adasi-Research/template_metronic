@@ -1,88 +1,88 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState, useRef} from 'react'
-import {createPortal} from 'react-dom'
-import {Modal} from 'react-bootstrap'
-import {defaultCreateAppData, ICreateAppData} from './IAppModels'
-import {StepperComponent} from '../../../assets/ts/components'
-import {KTSVG} from '../../../helpers'
-import {Step1} from './steps/Step1'
-import {Step2} from './steps/Step2'
-import {Step3} from './steps/Step3'
-import {Step4} from './steps/Step4'
-import {Step5} from './steps/Step5'
+import {useState, useRef} from 'react';
+import {createPortal} from 'react-dom';
+import {Modal} from 'react-bootstrap';
+import {defaultCreateAppData, ICreateAppData} from './IAppModels';
+import {StepperComponent} from '../../../assets/ts/components';
+import {KTSVG} from '../../../helpers';
+import {Step1} from './steps/Step1';
+import {Step2} from './steps/Step2';
+import {Step3} from './steps/Step3';
+import {Step4} from './steps/Step4';
+import {Step5} from './steps/Step5';
 
 type Props = {
-  show: boolean
-  handleClose: () => void
-}
+  show: boolean;
+  handleClose: () => void;
+};
 
-const modalsRoot = document.getElementById('root-modals') || document.body
+const modalsRoot = document.getElementById('root-modals') || document.body;
 
 const CreateAppModal = ({show, handleClose}: Props) => {
-  const stepperRef = useRef<HTMLDivElement | null>(null)
-  const stepper = useRef<StepperComponent | null>(null)
-  const [data, setData] = useState<ICreateAppData>(defaultCreateAppData)
-  const [hasError, setHasError] = useState(false)
+  const stepperRef = useRef<HTMLDivElement | null>(null);
+  const stepper = useRef<StepperComponent | null>(null);
+  const [data, setData] = useState<ICreateAppData>(defaultCreateAppData);
+  const [hasError, setHasError] = useState(false);
 
   const loadStepper = () => {
-    stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement)
-  }
+    stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement);
+  };
 
   const updateData = (fieldsToUpdate: Partial<ICreateAppData>) => {
-    const updatedData = {...data, ...fieldsToUpdate}
-    setData(updatedData)
-  }
+    const updatedData = {...data, ...fieldsToUpdate};
+    setData(updatedData);
+  };
 
   const checkAppBasic = (): boolean => {
     if (!data.appBasic.appName || !data.appBasic.appType) {
-      return false
+      return false;
     }
-    return true
-  }
+    return true;
+  };
 
   const checkAppDataBase = (): boolean => {
     if (!data.appDatabase.databaseName || !data.appDatabase.databaseSolution) {
-      return false
+      return false;
     }
 
-    return true
-  }
+    return true;
+  };
 
   const prevStep = () => {
     if (!stepper.current) {
-      return
+      return;
     }
 
-    stepper.current.goPrev()
-  }
+    stepper.current.goPrev();
+  };
 
   const nextStep = () => {
-    setHasError(false)
+    setHasError(false);
     if (!stepper.current) {
-      return
+      return;
     }
 
     if (stepper.current.getCurrentStepIndex() === 1) {
       if (!checkAppBasic()) {
-        setHasError(true)
-        return
+        setHasError(true);
+        return;
       }
     }
 
     if (stepper.current.getCurrentStepIndex() === 3) {
       if (!checkAppDataBase()) {
-        setHasError(true)
-        return
+        setHasError(true);
+        return;
       }
     }
 
-    stepper.current.goNext()
-  }
+    stepper.current.goNext();
+  };
 
   const submit = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   return createPortal(
     <Modal
@@ -314,7 +314,7 @@ const CreateAppModal = ({show, handleClose}: Props) => {
       </div>
     </Modal>,
     modalsRoot
-  )
-}
+  );
+};
 
-export {CreateAppModal}
+export {CreateAppModal};

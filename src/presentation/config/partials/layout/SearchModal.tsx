@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import { Modal } from 'react-bootstrap'
-import { KTSVG, toAbsoluteUrl } from '../../helpers'
+import React from 'react';
+import {Modal} from 'react-bootstrap';
+import {KTSVG, toAbsoluteUrl} from '../../helpers';
 // import {ListsWidget4, ListsWidget5} from '../widgets'
 
 type Props = {
-  show: boolean
-  handleClose: () => void
-}
+  show: boolean;
+  handleClose: () => void;
+};
 
-const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
+const SearchModal: React.FC<Props> = ({show, handleClose}) => {
   return (
     <Modal
       className='bg-body'
@@ -56,11 +56,14 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
                                 '/media/stock/600x400/img-17.jpg'
-                              )}')`
+                              )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='src/presentation/config/partials/layout#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -73,11 +76,14 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
                                 '/media/stock/600x400/img-1.jpg'
-                              )}')`
+                              )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='src/presentation/config/partials/layout#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -92,11 +98,14 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
                                 '/media/stock/600x400/img-23.jpg'
-                              )}')`
+                              )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='src/presentation/config/partials/layout#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -113,11 +122,14 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                         style={{
                           backgroundImage: `url('${toAbsoluteUrl(
                             '/media/stock/600x400/img-11.jpg'
-                          )}')`
+                          )}')`,
                         }}
                       ></div>
                       <div className='overlay-layer bg-body bg-opacity-50'>
-                        <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-bold btn-primary'>
+                        <a
+                          href='src/presentation/config/partials/layout#'
+                          className='btn btn-sm fw-bold btn-primary'
+                        >
                           Explore
                         </a>
                       </div>
@@ -146,7 +158,7 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
         </div>
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export { SearchModal }
+export {SearchModal};

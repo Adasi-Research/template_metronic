@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {toAbsoluteUrl} from '../../../../helpers'
+import {toAbsoluteUrl} from '../../../../helpers';
 
 const Step5 = () => {
   return (
@@ -28,7 +28,7 @@ const Step5 = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export {Step5}
+export {Step5};

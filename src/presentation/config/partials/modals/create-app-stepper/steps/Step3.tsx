@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {StepProps} from '../IAppModels'
+import {StepProps} from '../IAppModels';
 
 const Step3 = ({data, updateData, hasError}: StepProps) => {
   return (
@@ -158,7 +158,7 @@ const Step3 = ({data, updateData, hasError}: StepProps) => {
       </div>
       {/*end::Step 3 */}
     </>
-  )
-}
+  );
+};
 
-export {Step3}
+export {Step3};

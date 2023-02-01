@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC } from 'react'
-import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import {type FC} from 'react';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
 
 const Item7: FC = () => {
   return (
@@ -48,7 +48,10 @@ const Item7: FC = () => {
                   Login into Metronic Admin Dashboard to make sure the data integrity is OK
                 </div>
               </div>
-              <a href='src/presentation/config/partials/content/activity#' className='btn btn-primary px-6 align-self-center text-nowrap'>
+              <a
+                href='src/presentation/config/partials/content/activity#'
+                className='btn btn-primary px-6 align-self-center text-nowrap'
+              >
                 Proceed
               </a>
             </div>
@@ -56,7 +59,7 @@ const Item7: FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Item7 }
+export {Item7};

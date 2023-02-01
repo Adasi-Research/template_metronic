@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC, useEffect, useState } from 'react'
-import { KTSVG } from '../../../../helpers'
+import {type FC, useEffect, useState} from 'react';
+import {KTSVG} from '../../../../helpers';
 
 const ToolbarAccounting: FC = () => {
-  const [progress, setProgress] = useState<string>('1')
-  const [filter, setFilter] = useState<string>('1')
+  const [progress, setProgress] = useState<string>('1');
+  const [filter, setFilter] = useState<string>('1');
 
   useEffect(() => {
-    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true')
-  }, [])
+    document.body.setAttribute('data-kt-app-toolbar-fixed', 'true');
+  }, []);
 
   return (
     <>
@@ -28,7 +28,10 @@ const ToolbarAccounting: FC = () => {
               data-bs-trigger='hover'
               title='Add a team member'
             >
-              <a href='src/presentation/config/layout/components/toolbar/toolbars#' className='btn btn-sm btn-icon btn-active-color-success'>
+              <a
+                href='src/presentation/config/layout/components/toolbar/toolbars#'
+                className='btn btn-sm btn-icon btn-active-color-success'
+              >
                 <KTSVG path='/media/icons/duotune/general/gen035.svg' className='svg-icon-2x' />
               </a>
             </div>
@@ -41,7 +44,10 @@ const ToolbarAccounting: FC = () => {
               data-bs-trigger='hover'
               title='Create new account'
             >
-              <a href='src/presentation/config/layout/components/toolbar/toolbars#' className='btn btn-sm btn-icon btn-active-color-success'>
+              <a
+                href='src/presentation/config/layout/components/toolbar/toolbars#'
+                className='btn btn-sm btn-icon btn-active-color-success'
+              >
                 <KTSVG path='/media/icons/duotune/general/gen037.svg' className='svg-icon-2x' />
               </a>
             </div>
@@ -54,7 +60,10 @@ const ToolbarAccounting: FC = () => {
               data-bs-trigger='hover'
               title='Invite friends'
             >
-              <a href='src/presentation/config/layout/components/toolbar/toolbars#' className='btn btn-sm btn-icon btn-active-color-success'>
+              <a
+                href='src/presentation/config/layout/components/toolbar/toolbars#'
+                className='btn btn-sm btn-icon btn-active-color-success'
+              >
                 <KTSVG path='/media/icons/duotune/general/gen023.svg' className='svg-icon-2x' />
               </a>
             </div>
@@ -78,7 +87,7 @@ const ToolbarAccounting: FC = () => {
             <div
               className='progress-bar rounded bg-success fs-7 fw-bold'
               role='progressbar'
-              style={{ width: '72%' }}
+              style={{width: '72%'}}
               aria-valuenow={72}
               aria-valuemin={0}
               aria-valuemax={100}
@@ -101,7 +110,9 @@ const ToolbarAccounting: FC = () => {
             data-placeholder='Latest'
             data-hide-search='true'
             value={progress}
-            onChange={(e) => { setProgress(e.target.value) }}
+            onChange={(e) => {
+              setProgress(e.target.value);
+            }}
           >
             <option value=''></option>
             <option value='1'>Today 16 Feb</option>
@@ -121,7 +132,9 @@ const ToolbarAccounting: FC = () => {
             data-placeholder='Filters'
             data-hide-search='true'
             value={filter}
-            onChange={(e) => { setFilter(e.target.value) }}
+            onChange={(e) => {
+              setFilter(e.target.value);
+            }}
           >
             <option value=''></option>
             <option value='1'>Filters</option>
@@ -133,7 +146,7 @@ const ToolbarAccounting: FC = () => {
         {/* end::Input group- */}
       </div>
     </>
-  )
-}
+  );
+};
 
-export { ToolbarAccounting }
+export {ToolbarAccounting};

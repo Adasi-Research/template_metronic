@@ -1,30 +1,30 @@
-import clsx from 'clsx'
-import { KTSVG } from '../../../helpers'
-import { ThemeModeComponent } from '../../../assets/ts/layout'
-import { type ThemeModeType, useThemeMode } from './ThemeModeProvider'
+import clsx from 'clsx';
+import {KTSVG} from '../../../helpers';
+import {ThemeModeComponent} from '../../../assets/ts/layout';
+import {type ThemeModeType, useThemeMode} from './ThemeModeProvider';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 type Props = {
-  toggleBtnClass?: string
-  toggleBtnIconClass?: string
-  menuPlacement?: string
-  menuTrigger?: string
-}
+  toggleBtnClass?: string;
+  toggleBtnIconClass?: string;
+  menuPlacement?: string;
+  menuTrigger?: string;
+};
 
-const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark'
+const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark';
 
 const ThemeModeSwitcher = ({
   toggleBtnClass = '',
   toggleBtnIconClass = 'svg-icon-2',
   menuPlacement = 'bottom-end',
-  menuTrigger = "{default: 'click', lg: 'hover'}"
+  menuTrigger = "{default: 'click', lg: 'hover'}",
 }: Props) => {
-  const { mode, menuMode, updateMode, updateMenuMode } = useThemeMode()
-  const calculatedMode = mode === 'system' ? systemMode : mode
+  const {mode, menuMode, updateMode, updateMenuMode} = useThemeMode();
+  const calculatedMode = mode === 'system' ? systemMode : mode;
   const switchMode = (_mode: ThemeModeType) => {
-    updateMenuMode(_mode)
-    updateMode(_mode)
-  }
+    updateMenuMode(_mode);
+    updateMode(_mode);
+  };
 
   return (
     <>
@@ -61,8 +61,10 @@ const ThemeModeSwitcher = ({
         <div className='menu-item px-3 my-0'>
           <a
             href='src/presentation/config/partials/layout/theme-mode#'
-            className={clsx('menu-link px-3 py-2', { active: menuMode === 'light' })}
-            onClick={() => { switchMode('light') }}
+            className={clsx('menu-link px-3 py-2', {active: menuMode === 'light'})}
+            onClick={() => {
+              switchMode('light');
+            }}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen060.svg' className='svg-icon-3' />
@@ -76,8 +78,10 @@ const ThemeModeSwitcher = ({
         <div className='menu-item px-3 my-0'>
           <a
             href='src/presentation/config/partials/layout/theme-mode#'
-            className={clsx('menu-link px-3 py-2', { active: menuMode === 'dark' })}
-            onClick={() => { switchMode('dark') }}
+            className={clsx('menu-link px-3 py-2', {active: menuMode === 'dark'})}
+            onClick={() => {
+              switchMode('dark');
+            }}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen061.svg' className='svg-icon-3' />
@@ -91,8 +95,10 @@ const ThemeModeSwitcher = ({
         <div className='menu-item px-3 my-0'>
           <a
             href='src/presentation/config/partials/layout/theme-mode#'
-            className={clsx('menu-link px-3 py-2', { active: menuMode === 'system' })}
-            onClick={() => { switchMode('system') }}
+            className={clsx('menu-link px-3 py-2', {active: menuMode === 'system'})}
+            onClick={() => {
+              switchMode('system');
+            }}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen062.svg' className='svg-icon-3' />
@@ -104,7 +110,7 @@ const ThemeModeSwitcher = ({
       </div>
       {/* end::Menu */}
     </>
-  )
-}
+  );
+};
 
-export { ThemeModeSwitcher }
+export {ThemeModeSwitcher};

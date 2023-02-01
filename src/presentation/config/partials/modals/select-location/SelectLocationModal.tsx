@@ -1,28 +1,28 @@
-import React, {Dispatch, SetStateAction, useState, useEffect} from 'react'
-import {Modal} from 'react-bootstrap'
-import {KTSVG} from '../../../helpers'
+import React, {Dispatch, SetStateAction, useState, useEffect} from 'react';
+import {Modal} from 'react-bootstrap';
+import {KTSVG} from '../../../helpers';
 
 type Props = {
-  data: {location: string; setLocation: Dispatch<SetStateAction<string>>}
-  show: boolean
-  handleClose: () => void
-}
+  data: {location: string; setLocation: Dispatch<SetStateAction<string>>};
+  show: boolean;
+  handleClose: () => void;
+};
 
 const SelectLocationModal: React.FC<Props> = ({show, handleClose, data}) => {
   useEffect(() => {
-    initMap()
-  }, [])
+    initMap();
+  }, []);
 
-  const [location, setLocation] = useState(data.location)
+  const [location, setLocation] = useState(data.location);
   const dissmissLocation = () => {
-    setLocation(data.location)
-    handleClose()
-  }
+    setLocation(data.location);
+    handleClose();
+  };
   const applyLocation = () => {
-    data.setLocation(location)
-    handleClose()
-  }
-  const initMap = () => {}
+    data.setLocation(location);
+    handleClose();
+  };
+  const initMap = () => {};
 
   return (
     <Modal
@@ -61,7 +61,7 @@ const SelectLocationModal: React.FC<Props> = ({show, handleClose, data}) => {
         </div>
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export {SelectLocationModal}
+export {SelectLocationModal};

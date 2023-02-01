@@ -1,13 +1,13 @@
-import {useState} from 'react'
-import * as Yup from 'yup'
-import clsx from 'clsx'
-import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
-import {requestPassword} from '../core/_requests'
+import {useState} from 'react';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import {Link} from 'react-router-dom';
+import {useFormik} from 'formik';
+import {requestPassword} from '../core/_requests';
 
 const initialValues = {
   email: 'admin@demo.com',
-}
+};
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string()
@@ -15,32 +15,32 @@ const forgotPasswordSchema = Yup.object().shape({
     .min(3, 'Minimum 3 symbols')
     .max(50, 'Maximum 50 symbols')
     .required('Email is required'),
-})
+});
 
 export function ForgotPassword() {
-  const [loading, setLoading] = useState(false)
-  const [hasErrors, setHasErrors] = useState<boolean | undefined>(undefined)
+  const [loading, setLoading] = useState(false);
+  const [hasErrors, setHasErrors] = useState<boolean | undefined>(undefined);
   const formik = useFormik({
     initialValues,
     validationSchema: forgotPasswordSchema,
     onSubmit: (values, {setStatus, setSubmitting}) => {
-      setLoading(true)
-      setHasErrors(undefined)
+      setLoading(true);
+      setHasErrors(undefined);
       setTimeout(() => {
         requestPassword(values.email)
           .then(({data: {result}}) => {
-            setHasErrors(false)
-            setLoading(false)
+            setHasErrors(false);
+            setLoading(false);
           })
           .catch(() => {
-            setHasErrors(true)
-            setLoading(false)
-            setSubmitting(false)
-            setStatus('The login detail is incorrect')
-          })
-      }, 1000)
+            setHasErrors(true);
+            setLoading(false);
+            setSubmitting(false);
+            setStatus('The login detail is incorrect');
+          });
+      }, 1000);
     },
-  })
+  });
 
   return (
     <form
@@ -127,5 +127,5 @@ export function ForgotPassword() {
       </div>
       {/* end::Form group */}
     </form>
-  )
+  );
 }

@@ -1,21 +1,21 @@
-import {Link} from 'react-router-dom'
-import clsx from 'clsx'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {useLayout} from '../../core'
+import {Link} from 'react-router-dom';
+import clsx from 'clsx';
+import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {useLayout} from '../../core';
 
 const SidebarLogo = () => {
-  const {config} = useLayout()
+  const {config} = useLayout();
   const appSidebarDefaultMinimizeDesktopEnabled =
-    config?.app?.sidebar?.default?.minimize?.desktop?.enabled
+    config?.app?.sidebar?.default?.minimize?.desktop?.enabled;
   const appSidebarDefaultCollapseDesktopEnabled =
-    config?.app?.sidebar?.default?.collapse?.desktop?.enabled
+    config?.app?.sidebar?.default?.collapse?.desktop?.enabled;
   const toggleType = appSidebarDefaultCollapseDesktopEnabled
     ? 'collapse'
     : appSidebarDefaultMinimizeDesktopEnabled
     ? 'minimize'
-    : ''
-  const toggleState = appSidebarDefaultMinimizeDesktopEnabled ? 'active' : ''
-  const appSidebarDefaultMinimizeDefault = config.app?.sidebar?.default?.minimize?.desktop?.default
+    : '';
+  const toggleState = appSidebarDefaultMinimizeDesktopEnabled ? 'active' : '';
+  const appSidebarDefaultMinimizeDefault = config.app?.sidebar?.default?.minimize?.desktop?.default;
   return (
     <div className='app-sidebar-logo px-6' id='kt_app_sidebar_logo'>
       <Link to='/dashboard'>
@@ -63,7 +63,7 @@ const SidebarLogo = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export {SidebarLogo}
+export {SidebarLogo};

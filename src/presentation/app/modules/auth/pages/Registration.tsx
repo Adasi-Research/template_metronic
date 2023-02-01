@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, useEffect } from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import clsx from 'clsx'
-import { getUserByToken, register } from '../core/_requests'
-import { Link } from 'react-router-dom'
-import { toAbsoluteUrl } from '../../../../config/helpers'
-import { PasswordMeterComponent } from '../../../../config/assets/ts/components'
-import { useAuth } from '../core/Auth'
+import {useState, useEffect} from 'react';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import {getUserByToken, register} from '../core/_requests';
+import {Link} from 'react-router-dom';
+import {toAbsoluteUrl} from '../../../../config/helpers';
+import {PasswordMeterComponent} from '../../../../config/assets/ts/components';
+import {useAuth} from '../core/Auth';
 
 const initialValues = {
   firstname: '',
@@ -16,8 +16,8 @@ const initialValues = {
   email: '',
   password: '',
   changepassword: '',
-  acceptTerms: false
-}
+  acceptTerms: false,
+};
 
 const registrationSchema = Yup.object().shape({
   firstname: Yup.string()
@@ -40,44 +40,44 @@ const registrationSchema = Yup.object().shape({
   changepassword: Yup.string()
     .required('Password confirmation is required')
     .when('password', {
-      is: (val: string) => (!!(val && val.length > 0)),
-      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match")
+      is: (val: string) => !!(val && val.length > 0),
+      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
     }),
-  acceptTerms: Yup.bool().required('You must accept the terms and conditions')
-})
+  acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
+});
 
-export function Registration () {
-  const [loading, setLoading] = useState(false)
-  const { saveAuth, setCurrentUser } = useAuth()
+export function Registration() {
+  const [loading, setLoading] = useState(false);
+  const {saveAuth, setCurrentUser} = useAuth();
   const formik = useFormik({
     initialValues,
     validationSchema: registrationSchema,
-    onSubmit: async (values, { setStatus, setSubmitting }) => {
-      setLoading(true)
+    onSubmit: async (values, {setStatus, setSubmitting}) => {
+      setLoading(true);
       try {
-        const { data: auth } = await register(
+        const {data: auth} = await register(
           values.email,
           values.firstname,
           values.lastname,
           values.password,
           values.changepassword
-        )
-        saveAuth(auth)
-        const { data: user } = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
+        );
+        saveAuth(auth);
+        const {data: user} = await getUserByToken(auth.api_token);
+        setCurrentUser(user);
       } catch (error) {
-        console.error(error)
-        saveAuth(undefined)
-        setStatus('The registration details is incorrect')
-        setSubmitting(false)
-        setLoading(false)
+        console.error(error);
+        saveAuth(undefined);
+        setStatus('The registration details is incorrect');
+        setSubmitting(false);
+        setLoading(false);
       }
-    }
-  })
+    },
+  });
 
   useEffect(() => {
-    PasswordMeterComponent.bootstrap()
-  }, [])
+    PasswordMeterComponent.bootstrap();
+  }, []);
 
   return (
     <form
@@ -162,10 +162,10 @@ export function Registration () {
           className={clsx(
             'form-control bg-transparent',
             {
-              'is-invalid': formik.touched.firstname && formik.errors.firstname
+              'is-invalid': formik.touched.firstname && formik.errors.firstname,
             },
             {
-              'is-valid': formik.touched.firstname && !formik.errors.firstname
+              'is-valid': formik.touched.firstname && !formik.errors.firstname,
             }
           )}
         />
@@ -189,10 +189,10 @@ export function Registration () {
           className={clsx(
             'form-control bg-transparent',
             {
-              'is-invalid': formik.touched.lastname && formik.errors.lastname
+              'is-invalid': formik.touched.lastname && formik.errors.lastname,
             },
             {
-              'is-valid': formik.touched.lastname && !formik.errors.lastname
+              'is-valid': formik.touched.lastname && !formik.errors.lastname,
             }
           )}
         />
@@ -216,9 +216,9 @@ export function Registration () {
           {...formik.getFieldProps('email')}
           className={clsx(
             'form-control bg-transparent',
-            { 'is-invalid': formik.touched.email && formik.errors.email },
+            {'is-invalid': formik.touched.email && formik.errors.email},
             {
-              'is-valid': formik.touched.email && !formik.errors.email
+              'is-valid': formik.touched.email && !formik.errors.email,
             }
           )}
         />
@@ -245,10 +245,10 @@ export function Registration () {
               className={clsx(
                 'form-control bg-transparent',
                 {
-                  'is-invalid': formik.touched.password && formik.errors.password
+                  'is-invalid': formik.touched.password && formik.errors.password,
                 },
                 {
-                  'is-valid': formik.touched.password && !formik.errors.password
+                  'is-valid': formik.touched.password && !formik.errors.password,
                 }
               )}
             />
@@ -289,10 +289,10 @@ export function Registration () {
           className={clsx(
             'form-control bg-transparent',
             {
-              'is-invalid': formik.touched.changepassword && formik.errors.changepassword
+              'is-invalid': formik.touched.changepassword && formik.errors.changepassword,
             },
             {
-              'is-valid': formik.touched.changepassword && !formik.errors.changepassword
+              'is-valid': formik.touched.changepassword && !formik.errors.changepassword,
             }
           )}
         />
@@ -347,7 +347,7 @@ export function Registration () {
         >
           {!loading && <span className='indicator-label'>Submit</span>}
           {loading && (
-            <span className='indicator-progress' style={{ display: 'block' }}>
+            <span className='indicator-progress' style={{display: 'block'}}>
               Please wait...{' '}
               <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
             </span>
@@ -365,5 +365,5 @@ export function Registration () {
       </div>
       {/* end::Form group */}
     </form>
-  )
+  );
 }

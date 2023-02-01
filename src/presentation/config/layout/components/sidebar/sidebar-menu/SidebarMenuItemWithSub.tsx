@@ -1,16 +1,16 @@
-import React from 'react'
-import clsx from 'clsx'
-import {useLocation} from 'react-router'
-import {checkIsActive, KTSVG, WithChildren} from '../../../../helpers'
-import {useLayout} from '../../../core'
+import React from 'react';
+import clsx from 'clsx';
+import {useLocation} from 'react-router';
+import {checkIsActive, KTSVG, WithChildren} from '../../../../helpers';
+import {useLayout} from '../../../core';
 
 type Props = {
-  to: string
-  title: string
-  icon?: string
-  fontIcon?: string
-  hasBullet?: boolean
-}
+  to: string;
+  title: string;
+  icon?: string;
+  fontIcon?: string;
+  hasBullet?: boolean;
+};
 
 const SidebarMenuItemWithSub: React.FC<Props & WithChildren> = ({
   children,
@@ -20,10 +20,10 @@ const SidebarMenuItemWithSub: React.FC<Props & WithChildren> = ({
   fontIcon,
   hasBullet,
 }) => {
-  const {pathname} = useLocation()
-  const isActive = checkIsActive(pathname, to)
-  const {config} = useLayout()
-  const {app} = config
+  const {pathname} = useLocation();
+  const isActive = checkIsActive(pathname, to);
+  const {config} = useLayout();
+  const {app} = config;
 
   return (
     <div
@@ -51,7 +51,7 @@ const SidebarMenuItemWithSub: React.FC<Props & WithChildren> = ({
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export {SidebarMenuItemWithSub}
+export {SidebarMenuItemWithSub};

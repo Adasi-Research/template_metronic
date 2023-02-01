@@ -102,7 +102,7 @@
     "test:ci": "npm test -- --coverage",
     "eject": "react-scripts eject",
     "lint": "prettier --check .",
-    "format": "prettier --write .",
+    "format": "prettier --write ./src",
     "rtl": "webpack --config=rtl.config.js"
   }
 }

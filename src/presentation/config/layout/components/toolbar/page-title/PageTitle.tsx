@@ -1,12 +1,12 @@
-import clsx from 'clsx'
-import {Link} from 'react-router-dom'
-import {useLayout} from '../../../core'
-import {usePageData} from '../../../core/PageData'
+import clsx from 'clsx';
+import {Link} from 'react-router-dom';
+import {useLayout} from '../../../core';
+import {usePageData} from '../../../core/PageData';
 
 const PageTitle = () => {
-  const {pageTitle, pageDescription, pageBreadcrumbs} = usePageData()
-  const {config, classes} = useLayout()
-  const appPageTitleDirection = config.app?.pageTitle?.direction
+  const {pageTitle, pageDescription, pageBreadcrumbs} = usePageData();
+  const {config, classes} = useLayout();
+  const appPageTitleDirection = config.app?.pageTitle?.direction;
 
   return (
     <div
@@ -80,7 +80,7 @@ const PageTitle = () => {
           </>
         )}
     </div>
-  )
-}
+  );
+};
 
-export {PageTitle}
+export {PageTitle};

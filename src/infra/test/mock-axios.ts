@@ -1,17 +1,17 @@
-import axios from 'axios'
-import { faker } from '@faker-js/faker'
+import axios from 'axios';
+import {faker} from '@faker-js/faker';
 
 const mockHttpResponse: any = () => ({
   data: {
-    name: faker.name
+    name: faker.name,
   },
-  status: faker.internet.httpStatusCode()
-})
+  status: faker.internet.httpStatusCode(),
+});
 
 const mockAxios = (): jest.Mocked<typeof axios> => {
-  const mockedAxios = axios as jest.Mocked<typeof axios>
-  mockedAxios.post.mockResolvedValue(mockHttpResponse())
-  return mockedAxios
-}
+  const mockedAxios = axios as jest.Mocked<typeof axios>;
+  mockedAxios.post.mockResolvedValue(mockHttpResponse());
+  return mockedAxios;
+};
 
-export { mockAxios, mockHttpResponse }
+export {mockAxios, mockHttpResponse};

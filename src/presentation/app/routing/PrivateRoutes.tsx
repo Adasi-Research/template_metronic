@@ -1,10 +1,10 @@
-import React, { type FC, Suspense } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { MasterLayout } from '../../config/layout/MasterLayout'
-import TopBarProgress from 'react-topbar-progress-indicator'
-import { getCSSVariableValue } from '../../config/assets/ts/_utils'
-import { type WithChildren } from '../../config/helpers'
-import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
+import React, {type FC, Suspense} from 'react';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import {MasterLayout} from '../../config/layout/MasterLayout';
+import TopBarProgress from 'react-topbar-progress-indicator';
+import {getCSSVariableValue} from '../../config/assets/ts/_utils';
+import {type WithChildren} from '../../config/helpers';
+import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper';
 
 const PrivateRoutes = () => {
   return (
@@ -20,19 +20,19 @@ const PrivateRoutes = () => {
         <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
     </Routes>
-  )
-}
+  );
+};
 
-const SuspensedView: FC<WithChildren> = ({ children }) => {
-  const baseColor = getCSSVariableValue('--bs-primary')
+const SuspensedView: FC<WithChildren> = ({children}) => {
+  const baseColor = getCSSVariableValue('--bs-primary');
   TopBarProgress.config({
     barColors: {
-      0: baseColor
+      0: baseColor,
     },
     barThickness: 1,
-    shadowBlur: 5
-  })
-  return <Suspense fallback={<TopBarProgress />}>{children}</Suspense>
-}
+    shadowBlur: 5,
+  });
+  return <Suspense fallback={<TopBarProgress />}>{children}</Suspense>;
+};
 
-export { PrivateRoutes }
+export {PrivateRoutes};

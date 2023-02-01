@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { type FC } from 'react'
+import {type FC} from 'react';
 
 const Dropdown2: FC = () => {
   return (
@@ -67,13 +67,16 @@ const Dropdown2: FC = () => {
 
       <div className='menu-item px-3'>
         <div className='menu-content px-3 py-3'>
-          <a className='btn btn-primary  btn-sm px-4' href='src/presentation/config/partials/content/dropdown#'>
+          <a
+            className='btn btn-primary  btn-sm px-4'
+            href='src/presentation/config/partials/content/dropdown#'
+          >
             Generate Reports
           </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Dropdown2 }
+export {Dropdown2};

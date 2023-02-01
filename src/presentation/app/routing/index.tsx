@@ -5,46 +5,44 @@
  * components (e.g: `src/app/modules/Auth/pages/AuthPage`, `src/app/BasePage`).
  */
 
-import React from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { PrivateRoutes } from './PrivateRoutes'
-import { ErrorsPage } from '../modules/errors/ErrorsPage'
-import { AuthPage, Logout, useAuth } from '../modules/auth'
-import { App } from '../App'
-import { makeLogin } from '@/main/factories/modules/auth/login.factory'
+import React from 'react';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {PrivateRoutes} from './PrivateRoutes';
+import {ErrorsPage} from '../modules/errors/ErrorsPage';
+import {AuthPage, Logout, useAuth} from '../modules/auth';
+import {App} from '../App';
+import {makeLogin} from '@/main/factories/modules/auth/login.factory';
 
 /**
  * Base URL of the website.
  *
  * @see https://facebook.github.io/create-react-app/docs/using-the-public-folder
  */
-const { PUBLIC_URL } = process.env
+const {PUBLIC_URL} = process.env;
 
 export const Router = (): JSX.Element => {
-  const { currentUser } = useAuth()
+  const {currentUser} = useAuth();
 
-  console.log(currentUser)
+  console.log(currentUser);
   return (
     <BrowserRouter basename={PUBLIC_URL}>
       <Routes>
         <Route element={<App />}>
-          <Route path="error/*" element={<ErrorsPage />} />
-          <Route path="logout" element={<Logout />} />
-          {currentUser
-            ? (
-              <>
-                <Route path="/*" element={<PrivateRoutes />} />
-                <Route index element={<Navigate to="/dashboard" />} />
-              </>
-              )
-            : (
-              <>
-                <Route path="auth/*" element={<AuthPage makeLogin={makeLogin} />} />
-                <Route path="*" element={<Navigate to="/auth" />} />
-              </>
-              )}
+          <Route path='error/*' element={<ErrorsPage />} />
+          <Route path='logout' element={<Logout />} />
+          {currentUser ? (
+            <>
+              <Route path='/*' element={<PrivateRoutes />} />
+              <Route index element={<Navigate to='/dashboard' />} />
+            </>
+          ) : (
+            <>
+              <Route path='auth/*' element={<AuthPage makeLogin={makeLogin} />} />
+              <Route path='*' element={<Navigate to='/auth' />} />
+            </>
+          )}
         </Route>
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};

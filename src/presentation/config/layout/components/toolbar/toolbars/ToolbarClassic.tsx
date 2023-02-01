@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx'
-import { useState } from 'react'
-import { KTSVG } from '../../../../helpers'
-import { CreateAppModal, Dropdown1 } from '../../../../partials'
-import { useLayout } from '../../../core'
+import clsx from 'clsx';
+import {useState} from 'react';
+import {KTSVG} from '../../../../helpers';
+import {CreateAppModal, Dropdown1} from '../../../../partials';
+import {useLayout} from '../../../core';
 
 const ToolbarClassic = () => {
-  const { config } = useLayout()
-  const [showCreateAppModal, setShowCreateAppModal] = useState<boolean>(false)
+  const {config} = useLayout();
+  const [showCreateAppModal, setShowCreateAppModal] = useState<boolean>(false);
   const daterangepickerButtonClass = config.app?.toolbar?.fixed?.desktop
     ? 'btn-light'
-    : 'bg-body btn-color-gray-700 btn-active-color-primary'
+    : 'bg-body btn-color-gray-700 btn-active-color-primary';
 
   return (
     <div className='d-flex align-items-center gap-2 gap-lg-3'>
@@ -47,7 +47,10 @@ const ToolbarClassic = () => {
       )}
 
       {config.app?.toolbar?.secondaryButton && (
-        <a href='src/presentation/config/layout/components/toolbar/toolbars#' className='btn btn-sm btn-flex btn-light fw-bold'>
+        <a
+          href='src/presentation/config/layout/components/toolbar/toolbars#'
+          className='btn btn-sm btn-flex btn-light fw-bold'
+        >
           Filter
         </a>
       )}
@@ -55,7 +58,9 @@ const ToolbarClassic = () => {
       {config.app?.toolbar?.primaryButton && (
         <a
           href='src/presentation/config/layout/components/toolbar/toolbars#'
-          onClick={() => { setShowCreateAppModal(true) }}
+          onClick={() => {
+            setShowCreateAppModal(true);
+          }}
           className='btn btn-sm fw-bold btn-primary'
           data-bs-toggle='modal'
           data-bs-target='#kt_modal_create_app'
@@ -63,9 +68,14 @@ const ToolbarClassic = () => {
           Create
         </a>
       )}
-      <CreateAppModal show={showCreateAppModal} handleClose={() => { setShowCreateAppModal(false) }} />
+      <CreateAppModal
+        show={showCreateAppModal}
+        handleClose={() => {
+          setShowCreateAppModal(false);
+        }}
+      />
     </div>
-  )
-}
+  );
+};
 
-export { ToolbarClassic }
+export {ToolbarClassic};

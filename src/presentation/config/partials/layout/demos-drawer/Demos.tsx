@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {toAbsoluteUrl} from '../../../helpers'
+import React, {FC} from 'react';
+import {toAbsoluteUrl} from '../../../helpers';
 
 const Demos: FC = () => {
   const demos = [
@@ -47,7 +47,7 @@ const Demos: FC = () => {
     {
       name: 'demo13',
     },
-  ]
+  ];
 
   return (
     <div className='mb-0'>
@@ -91,7 +91,7 @@ const Demos: FC = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export {Demos}
+export {Demos};
