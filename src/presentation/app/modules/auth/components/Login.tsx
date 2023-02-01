@@ -33,10 +33,9 @@ const initialValues = {
 
 interface PropsLogin {
   authentication: Authentication
-  validation: any
 }
 
-export function Login ({ authentication, validation }: PropsLogin): JSX.Element {
+export function Login ({ authentication }: PropsLogin): JSX.Element {
   const [loading, setLoading] = useState(false)
   const { saveAuth, setCurrentUser } = useAuth()
   console.log()
