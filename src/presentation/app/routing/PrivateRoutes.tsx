@@ -1,5 +1,6 @@
-import { lazy, type FC, Suspense } from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import React from 'react'
+import { type FC, Suspense } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { MasterLayout } from '../../config/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
 import { MenuTestPage } from '../pages/MenuTestPage'

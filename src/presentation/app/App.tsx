@@ -6,7 +6,7 @@ import { LayoutProvider, LayoutSplashScreen } from '../config/layout/core'
 import { MasterInit } from '../config/layout/MasterInit'
 import { AuthInit } from './modules/auth'
 
-const App = (): JSX.Element => {
+const App = () => {
   return (
     <Suspense fallback={<LayoutSplashScreen />}>
       <I18nProvider>

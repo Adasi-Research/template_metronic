@@ -30,7 +30,12 @@ const initialValues = {
   https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
 */
 
-export function Login (): JSX.Element {
+interface PropsLogin {
+  authentication: any
+  validation: any
+}
+
+export function Login ({ authentication, validation }: PropsLogin): JSX.Element {
   const [loading, setLoading] = useState(false)
   const { saveAuth, setCurrentUser } = useAuth()
 
