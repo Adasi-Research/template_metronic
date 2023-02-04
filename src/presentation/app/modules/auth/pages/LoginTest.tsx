@@ -1,4 +1,4 @@
- import React, {useState} from 'react';
+  import React, {useState} from 'react';
 import * as Yup from 'yup';
 import clsx from 'clsx';
 import {Link} from 'react-router-dom';
@@ -30,17 +30,13 @@ const initialValues = {
   https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
 */
 
-interface PropsLogin {
-  authentication: Authentication;
-}
-
-export function Login({authentication}: PropsLogin): JSX.Element {
+export function Login(): JSX.Element {
   const [loading, setLoading] = useState(false);
   const {saveAuth, setCurrentUser} = useAuth();
 
   const handleSubmit = (): void => {
     setLoading(true);
-    authentication
+    /*authentication
       .auth({
         username: formik.values.email,
         password: formik.values.password,
@@ -63,7 +59,7 @@ export function Login({authentication}: PropsLogin): JSX.Element {
       .catch((err) => {
         console.log(err);
         setLoading(false);
-      });
+      });*/
   };
 
   const formik = useFormik({
