@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {type FC} from 'react';
-import {KTSVG} from '../../../helpers';
-import {ChatInner} from '../../chat/ChatInner';
+import React, {FC} from 'react'
+import {KTSVG} from '../../../helpers'
+import {ChatInner} from '../../chat/ChatInner'
 
 const DrawerMessenger: FC = () => (
   <div
     id='kt_drawer_chat'
-    className='bg-body'
+    className='bg-white'
     data-kt-drawer='true'
     data-kt-drawer-name='chat'
     data-kt-drawer-activate='true'
@@ -20,16 +20,13 @@ const DrawerMessenger: FC = () => (
       <div className='card-header pe-5' id='kt_drawer_chat_messenger_header'>
         <div className='card-title'>
           <div className='d-flex justify-content-center flex-column me-3'>
-            <a
-              href='src/presentation/config/partials/layout/drawer-messenger#'
-              className='fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1'
-            >
+            <a href='src/presentation/config/partials/layout/drawer-messenger#' className='fs-4 fw-bold text-gray-900 text-hover-primary me-1 mb-2 lh-1'>
               Brian Cox
             </a>
 
             <div className='mb-0 lh-1'>
               <span className='badge badge-success badge-circle w-10px h-10px me-1'></span>
-              <span className='fs-7 fw-bold text-gray-400'>Active</span>
+              <span className='fs-7 fw-semibold text-gray-400'>Active</span>
             </div>
           </div>
         </div>
@@ -55,6 +52,6 @@ const DrawerMessenger: FC = () => (
       <ChatInner isDrawer={true} />
     </div>
   </div>
-);
+)
 
-export {DrawerMessenger};
+export {DrawerMessenger}

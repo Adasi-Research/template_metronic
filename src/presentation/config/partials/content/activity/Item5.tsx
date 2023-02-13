@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {type FC} from 'react';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {FC} from 'react'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const Item5: FC = () => {
   return (
@@ -18,7 +18,7 @@ const Item5: FC = () => {
 
       <div className='timeline-content mb-10 mt-n1'>
         <div className='pe-3 mb-5'>
-          <div className='fs-5 fw-bold mb-2'>3 new application design concepts added:</div>
+          <div className='fs-5 fw-semibold mb-2'>3 new application design concepts added:</div>
 
           <div className='d-flex align-items-center mt-1 fs-6'>
             <div className='text-muted me-2 fs-7'>Created at 4:23 PM by</div>
@@ -42,15 +42,12 @@ const Item5: FC = () => {
                 <img
                   alt='img'
                   className='rounded w-200px'
-                  src={toAbsoluteUrl('/media/demos/demo1.png')}
+                  src={toAbsoluteUrl('/media/demos/demo2.png')}
                 />
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='btn btn-sm btn-primary btn-shadow'
-                >
+                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
                   Explore
                 </a>
               </div>
@@ -66,10 +63,7 @@ const Item5: FC = () => {
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='btn btn-sm btn-primary btn-shadow'
-                >
+                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
                   Explore
                 </a>
               </div>
@@ -85,10 +79,7 @@ const Item5: FC = () => {
               </div>
 
               <div className='overlay-layer bg-dark bg-opacity-10 rounded'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='btn btn-sm btn-primary btn-shadow'
-                >
+                <a href='src/presentation/config/partials/content/activity#' className='btn btn-sm btn-primary btn-shadow'>
                   Explore
                 </a>
               </div>
@@ -97,7 +88,7 @@ const Item5: FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Item5};
+export {Item5}

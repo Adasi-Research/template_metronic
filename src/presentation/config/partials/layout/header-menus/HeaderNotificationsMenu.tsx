@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx';
-import {type FC} from 'react';
-import {Link} from 'react-router-dom';
-import {KTSVG, toAbsoluteUrl, defaultAlerts, defaultLogs} from '../../../helpers';
+import clsx from 'clsx'
+import {FC} from 'react'
+import {Link} from 'react-router-dom'
+import {KTSVG, toAbsoluteUrl, defaultAlerts, defaultLogs} from '../../../helpers'
 
 const HeaderNotificationsMenu: FC = () => (
   <div
@@ -13,11 +13,11 @@ const HeaderNotificationsMenu: FC = () => (
       className='d-flex flex-column bgi-no-repeat rounded-top'
       style={{backgroundImage: `url('${toAbsoluteUrl('/media/misc/menu-header-bg.jpg')}')`}}
     >
-      <h3 className='text-white fw-bold px-9 mt-10 mb-6'>
+      <h3 className='text-white fw-semibold px-9 mt-10 mb-6'>
         Notifications <span className='fs-8 opacity-75 ps-3'>24 reports</span>
       </h3>
 
-      <ul className='nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-bold px-9'>
+      <ul className='nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9'>
         <li className='nav-item'>
           <a
             className='nav-link text-white opacity-75 opacity-state-100 pb-4'
@@ -67,10 +67,7 @@ const HeaderNotificationsMenu: FC = () => (
                 </div>
 
                 <div className='mb-0 me-2'>
-                  <a
-                    href='src/presentation/config/partials/layout/header-menus#'
-                    className='fs-6 text-gray-800 text-hover-primary fw-bolder'
-                  >
+                  <a href='src/presentation/config/partials/layout/header-menus#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                     {alert.title}
                   </a>
                   <div className='text-gray-400 fs-7'>{alert.description}</div>
@@ -95,9 +92,9 @@ const HeaderNotificationsMenu: FC = () => (
       <div className='tab-pane fade show active' id='kt_topbar_notifications_2' role='tabpanel'>
         <div className='d-flex flex-column px-9'>
           <div className='pt-10 pb-0'>
-            <h3 className='text-dark text-center fw-bolder'>Get Pro Access</h3>
+            <h3 className='text-dark text-center fw-bold'>Get Pro Access</h3>
 
-            <div className='text-center text-gray-600 fw-bold pt-1'>
+            <div className='text-center text-gray-600 fw-semibold pt-1'>
               Outlines keep you honest. They stoping you from amazing poorly about drive
             </div>
 
@@ -132,10 +129,7 @@ const HeaderNotificationsMenu: FC = () => (
                   {log.code}
                 </span>
 
-                <a
-                  href='src/presentation/config/partials/layout/header-menus#'
-                  className='text-gray-800 text-hover-primary fw-bold'
-                >
+                <a href='src/presentation/config/partials/layout/header-menus#' className='text-gray-800 text-hover-primary fw-semibold'>
                   {log.message}
                 </a>
 
@@ -155,6 +149,6 @@ const HeaderNotificationsMenu: FC = () => (
       </div>
     </div>
   </div>
-);
+)
 
-export {HeaderNotificationsMenu};
+export {HeaderNotificationsMenu}

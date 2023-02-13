@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import {Modal} from 'react-bootstrap';
-import {KTSVG, toAbsoluteUrl} from '../../helpers';
+import React from 'react'
+import {Modal} from 'react-bootstrap'
+import {KTSVG, toAbsoluteUrl} from '../../helpers'
 // import {ListsWidget4, ListsWidget5} from '../widgets'
 
 type Props = {
-  show: boolean;
-  handleClose: () => void;
-};
+  show: boolean
+  handleClose: () => void
+}
 
 const SearchModal: React.FC<Props> = ({show, handleClose}) => {
   return (
     <Modal
-      className='bg-body'
+      className='bg-white'
       id='kt_header_search_modal'
       aria-hidden='true'
       dialogClassName='modal-fullscreen h-auto'
@@ -42,7 +42,7 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
 
             {/* begin::Shop Goods */}
             <div className='py-10'>
-              <h3 className='fw-bolder mb-8'>Shop Goods</h3>
+              <h3 className='fw-bold mb-8'>Shop Goods</h3>
 
               {/* begin::Row */}
               <div className='row g-5'>
@@ -59,11 +59,8 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                               )}')`,
                             }}
                           />
-                          <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a
-                              href='src/presentation/config/partials/layout#'
-                              className='btn btn-sm fw-bold btn-primary'
-                            >
+                          <div className='overlay-layer bg-white bg-opacity-50'>
+                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-semibold btn-primary'>
                               Explore
                             </a>
                           </div>
@@ -79,11 +76,8 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                               )}')`,
                             }}
                           />
-                          <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a
-                              href='src/presentation/config/partials/layout#'
-                              className='btn btn-sm fw-bold btn-primary'
-                            >
+                          <div className='overlay-layer bg-white bg-opacity-50'>
+                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-semibold btn-primary'>
                               Explore
                             </a>
                           </div>
@@ -101,11 +95,8 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                               )}')`,
                             }}
                           />
-                          <div className='overlay-layer bg-body bg-opacity-50'>
-                            <a
-                              href='src/presentation/config/partials/layout#'
-                              className='btn btn-sm fw-bold btn-primary'
-                            >
+                          <div className='overlay-layer bg-white bg-opacity-50'>
+                            <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-semibold btn-primary'>
                               Explore
                             </a>
                           </div>
@@ -125,11 +116,8 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                           )}')`,
                         }}
                       ></div>
-                      <div className='overlay-layer bg-body bg-opacity-50'>
-                        <a
-                          href='src/presentation/config/partials/layout#'
-                          className='btn btn-sm fw-bold btn-primary'
-                        >
+                      <div className='overlay-layer bg-white bg-opacity-50'>
+                        <a href='src/presentation/config/partials/layout#' className='btn btn-sm fw-semibold btn-primary'>
                           Explore
                         </a>
                       </div>
@@ -143,22 +131,22 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
 
             {/* begin::Framework Users */}
             <div>
-              <h3 className='text-dark fw-bolder fs-1 mb-6'>Framework Users</h3>
-              {/* <ListsWidget4 className='bg-transparent mb-5 shadow-none' innerPadding='px-0' /> */}
+              <h3 className='text-dark fw-bold fs-1 mb-6'>Framework Users</h3>
+              {/*<ListsWidget4 className='bg-transparent mb-5 shadow-none' innerPadding='px-0' />*/}
             </div>
             {/* end::Framework Users */}
 
             {/* begin::Tutorials */}
             <div className='pb-10'>
-              <h3 className='text-dark fw-bolder fs-1 mb-6'>Tutorials</h3>
-              {/* <ListsWidget5 className='mb-5 shadow-none' innerPadding='px-0' /> */}
+              <h3 className='text-dark fw-bold fs-1 mb-6'>Tutorials</h3>
+              {/*<ListsWidget5 className='mb-5 shadow-none' innerPadding='px-0' />*/}
             </div>
             {/* end::Tutorials */}
           </div>
         </div>
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export {SearchModal};
+export {SearchModal}

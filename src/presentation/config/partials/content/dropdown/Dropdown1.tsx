@@ -1,16 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import clsx from 'clsx'
+import React from 'react'
+import {useThemeMode} from '../../layout/theme-mode/ThemeModeProvider'
+
 export function Dropdown1() {
+  const {mode} = useThemeMode()
   return (
     <div className='menu menu-sub menu-sub-dropdown w-250px w-md-300px' data-kt-menu='true'>
       <div className='px-7 py-5'>
-        <div className='fs-5 text-dark fw-bolder'>Filter Options</div>
+        <div className='fs-5 text-dark fw-bold'>Filter Options</div>
       </div>
 
       <div className='separator border-gray-200'></div>
 
       <div className='px-7 py-5'>
         <div className='mb-10'>
-          <label className='form-label fw-bold'>Status:</label>
+          <label className='form-label fw-semibold'>Status:</label>
 
           <div>
             <select
@@ -30,7 +35,7 @@ export function Dropdown1() {
         </div>
 
         <div className='mb-10'>
-          <label className='form-label fw-bold'>Member Type:</label>
+          <label className='form-label fw-semibold'>Member Type:</label>
 
           <div className='d-flex'>
             <label className='form-check form-check-sm form-check-custom form-check-solid me-5'>
@@ -46,7 +51,7 @@ export function Dropdown1() {
         </div>
 
         <div className='mb-10'>
-          <label className='form-label fw-bold'>Notifications:</label>
+          <label className='form-label fw-semibold'>Notifications:</label>
 
           <div className='form-check form-switch form-switch-sm form-check-custom form-check-solid'>
             <input
@@ -63,7 +68,9 @@ export function Dropdown1() {
         <div className='d-flex justify-content-end'>
           <button
             type='reset'
-            className='btn btn-sm btn-light btn-active-light-primary me-2'
+            className={clsx('btn btn-sm btn-active-light-primary me-2', {
+              'btn-light ': mode === 'light',
+            })}
             data-kt-menu-dismiss='true'
           >
             Reset
@@ -75,5 +82,5 @@ export function Dropdown1() {
         </div>
       </div>
     </div>
-  );
+  )
 }

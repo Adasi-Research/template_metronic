@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import {Demos} from './Demos';
-import {KTSVG} from '../../../helpers';
+import React from 'react'
+import {Demos} from './Demos'
+import {KTSVG} from '../../../helpers'
 
 export function DemosDrawer() {
   return (
@@ -24,7 +24,7 @@ export function DemosDrawer() {
         <div className='card shadow-none w-100'>
           {/* begin::Header */}
           <div className='card-header' id='kt_explore_header'>
-            <h5 className='card-title fw-bold text-gray-600'>
+            <h5 className='card-title fw-semibold text-gray-600'>
               Explore {process.env.REACT_APP_THEME_NAME}
             </h5>
 
@@ -55,7 +55,7 @@ export function DemosDrawer() {
                 <div className='d-flex flex-stack'>
                   <h3 className='mb-0'>{process.env.REACT_APP_THEME_NAME} Licenses</h3>
 
-                  <a href='https://themeforest.net/licenses/standard' className='fw-bold'>
+                  <a href='https://themeforest.net/licenses/standard' className='fw-semibold'>
                     License FAQs
                   </a>
                 </div>
@@ -65,7 +65,7 @@ export function DemosDrawer() {
                 <div className='d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <div className='d-flex align-items-center mb-1'>
-                      <div className='fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1'>
+                      <div className='fs-6 fw-semibold text-gray-800 fw-semibold mb-0 me-1'>
                         Regular License
                       </div>
 
@@ -83,8 +83,8 @@ export function DemosDrawer() {
                   </div>
 
                   <div className='text-nowrap'>
-                    <span className='text-muted fs-7 fw-bold'>$</span>
-                    <span className='text-dark fs-1 fw-bolder'>39</span>
+                    <span className='text-muted fs-7 fw-semibold'>$</span>
+                    <span className='text-dark fs-1 fw-bold'>39</span>
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export function DemosDrawer() {
                 <div className='d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <div className='d-flex align-items-center mb-1'>
-                      <div className='fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1'>
+                      <div className='fs-6 fw-semibold text-gray-800 fw-semibold mb-0 me-1'>
                         Extended License
                       </div>
 
@@ -109,8 +109,8 @@ export function DemosDrawer() {
                   </div>
 
                   <div className='text-nowrap'>
-                    <span className='text-muted fs-7 fw-bold'>$</span>
-                    <span className='text-dark fs-1 fw-bolder'>939</span>
+                    <span className='text-muted fs-7 fw-semibold'>$</span>
+                    <span className='text-dark fs-1 fw-bold'>939</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export function DemosDrawer() {
                 <div className='d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <div className='d-flex align-items-center mb-1'>
-                      <div className='fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1'>
+                      <div className='fs-6 fw-semibold text-gray-800 fw-semibold mb-0 me-1'>
                         Custom License
                       </div>
                     </div>
@@ -147,5 +147,5 @@ export function DemosDrawer() {
       </div>
       {/* end::Demos drawer */}
     </>
-  );
+  )
 }

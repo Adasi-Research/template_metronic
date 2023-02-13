@@ -1,42 +1,31 @@
-import {type FC} from 'react';
-import {Link} from 'react-router-dom';
-import {toAbsoluteUrl} from '../../../../config/helpers';
+import {FC} from 'react'
+import {Link} from 'react-router-dom'
+import {toAbsoluteUrl} from '../../../../config/helpers'
 
 const Error404: FC = () => {
   return (
-    <>
-      {/* begin::Title */}
-      <h1 className='fw-bolder fs-2hx text-gray-900 mb-4'>Oops!</h1>
-      {/* end::Title */}
-
-      {/* begin::Text */}
-      <div className='fw-semibold fs-6 text-gray-500 mb-7'>We can't find that page.</div>
-      {/* end::Text */}
-
-      {/* begin::Illustration */}
-      <div className='mb-3'>
+    <div className='d-flex flex-column flex-root'>
+      <div className='d-flex flex-column flex-center flex-column-fluid p-10'>
+        {/* begin::Illustration */}
         <img
-          src={toAbsoluteUrl('/media/auth/404-error.png')}
-          className='mw-100 mh-300px theme-light-show'
+          src={toAbsoluteUrl('/media/illustrations/sketchy-1/18.png')}
           alt=''
+          className='mw-100 mb-10 h-lg-450px'
         />
-        <img
-          src={toAbsoluteUrl('/media/auth/404-error-dark.png')}
-          className='mw-100 mh-300px theme-dark-show'
-          alt=''
-        />
-      </div>
-      {/* end::Illustration */}
-
-      {/* begin::Link */}
-      <div className='mb-0'>
-        <Link to='/dashboard' className='btn btn-sm btn-primary'>
+        {/* end::Illustration */}
+        {/* begin::Message */}
+        <h1 className='fw-semibold mb-10' style={{color: '#A3A3C7'}}>
+          Seems there is nothing here
+        </h1>
+        {/* end::Message */}
+        {/* begin::Link */}
+        <Link to='/' className='btn btn-primary'>
           Return Home
         </Link>
+        {/* end::Link */}
       </div>
-      {/* end::Link */}
-    </>
-  );
-};
+    </div>
+  )
+}
 
-export {Error404};
+export {Error404}

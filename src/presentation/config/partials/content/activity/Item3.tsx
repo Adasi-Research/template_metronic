@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {type FC} from 'react';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {FC} from 'react'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const Item3: FC = () => {
   return (
@@ -18,10 +18,7 @@ const Item3: FC = () => {
 
       <div className='timeline-content mb-10 mt-n1'>
         <div className='mb-5 pe-3'>
-          <a
-            href='src/presentation/config/partials/content/activity#'
-            className='fs-5 fw-bold text-gray-800 text-hover-primary mb-2'
-          >
+          <a href='src/presentation/config/partials/content/activity#' className='fs-5 fw-semibold text-gray-800 text-hover-primary mb-2'>
             3 New Incoming Project Files:
           </a>
 
@@ -45,11 +42,8 @@ const Item3: FC = () => {
             <div className='d-flex flex-aligns-center pe-10 pe-lg-20'>
               <img alt='' className='w-30px me-3' src={toAbsoluteUrl('/media/svg/files/pdf.svg')} />
 
-              <div className='ms-1 fw-bold'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='fs-6 text-hover-primary fw-bolder'
-                >
+              <div className='ms-1 fw-semibold'>
+                <a href='src/presentation/config/partials/content/activity#' className='fs-6 text-hover-primary fw-bold'>
                   Finance KPI App Guidelines
                 </a>
 
@@ -60,11 +54,8 @@ const Item3: FC = () => {
             <div className='d-flex flex-aligns-center pe-10 pe-lg-20'>
               <img alt='' className='w-30px me-3' src={toAbsoluteUrl('/media/svg/files/doc.svg')} />
 
-              <div className='ms-1 fw-bold'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='fs-6 text-hover-primary fw-bolder'
-                >
+              <div className='ms-1 fw-semibold'>
+                <a href='src/presentation/config/partials/content/activity#' className='fs-6 text-hover-primary fw-bold'>
                   Client UAT Testing Results
                 </a>
 
@@ -75,11 +66,8 @@ const Item3: FC = () => {
             <div className='d-flex flex-aligns-center'>
               <img alt='' className='w-30px me-3' src={toAbsoluteUrl('/media/svg/files/css.svg')} />
 
-              <div className='ms-1 fw-bold'>
-                <a
-                  href='src/presentation/config/partials/content/activity#'
-                  className='fs-6 text-hover-primary fw-bolder'
-                >
+              <div className='ms-1 fw-semibold'>
+                <a href='src/presentation/config/partials/content/activity#' className='fs-6 text-hover-primary fw-bold'>
                   Finance Reports
                 </a>
 
@@ -90,7 +78,7 @@ const Item3: FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Item3};
+export {Item3}

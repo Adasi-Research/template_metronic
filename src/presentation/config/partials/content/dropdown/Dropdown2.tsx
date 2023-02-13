@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {type FC} from 'react';
+import {FC} from 'react'
 
 const Dropdown2: FC = () => {
   return (
     <div
-      className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold w-200px'
+      className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px'
       data-kt-menu='true'
     >
       <div className='menu-item px-3'>
-        <div className='menu-content fs-6 text-dark fw-bolder px-3 py-4'>Quick Actions</div>
+        <div className='menu-content fs-6 text-dark fw-bold px-3 py-4'>Quick Actions</div>
       </div>
 
       <div className='separator mb-3 opacity-75'></div>
@@ -67,16 +67,13 @@ const Dropdown2: FC = () => {
 
       <div className='menu-item px-3'>
         <div className='menu-content px-3 py-3'>
-          <a
-            className='btn btn-primary  btn-sm px-4'
-            href='src/presentation/config/partials/content/dropdown#'
-          >
+          <a className='btn btn-primary  btn-sm px-4' href='src/presentation/config/partials/content/dropdown#'>
             Generate Reports
           </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Dropdown2};
+export {Dropdown2}

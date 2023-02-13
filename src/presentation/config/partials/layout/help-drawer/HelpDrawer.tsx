@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {KTSVG} from '../../../helpers';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {KTSVG} from '../../../helpers'
 
 const HelpDrawer = () => {
   return (
@@ -22,7 +22,7 @@ const HelpDrawer = () => {
       <div className='card shadow-none rounded-0 w-100'>
         {/* begin::Header */}
         <div className='card-header' id='kt_help_header'>
-          <h5 className='card-title fw-bold text-gray-600'>Learn & Get Inspired</h5>
+          <h5 className='card-title fw-semibold text-gray-600'>Learn & Get Inspired</h5>
 
           <div className='card-toolbar'>
             <button
@@ -51,7 +51,7 @@ const HelpDrawer = () => {
             {/* begin::Support */}
             <div className='rounded border border-dashed border-gray-300 p-6 p-lg-8 mb-10'>
               {/* begin::Heading */}
-              <h2 className='fw-bolder mb-5'>
+              <h2 className='fw-bold mb-5'>
                 Support at{' '}
                 <a href='https://devs.keenthemes.com' className=''>
                   devs.keenthemes.com
@@ -60,7 +60,7 @@ const HelpDrawer = () => {
               {/* end::Heading */}
 
               {/* begin::Description */}
-              <div className='fs-5 fw-bold mb-5'>
+              <div className='fs-5 fw-semibold mb-5'>
                 <span className='text-gray-500'>
                   Join our developers community to find answer to your question and help others.
                 </span>
@@ -98,13 +98,13 @@ const HelpDrawer = () => {
                   {/* begin::Title */}
                   <a
                     href='https://preview.keenthemes.com/metronic8/react/docs/docs/quick-start'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
+                    className='text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1'
                   >
                     Documentation &amp; Videos
                   </a>
                   {/* end::Title */}
                   {/* begin::Description */}
-                  <div className='text-muted fw-bold fs-7 fs-lg-6'>
+                  <div className='text-muted fw-semibold fs-7 fs-lg-6'>
                     From guides and video tutorials, to live demos and code examples to get started.
                   </div>
                   {/* end::Description */}
@@ -135,13 +135,13 @@ const HelpDrawer = () => {
                   {/* begin::Title */}
                   <a
                     href='https://preview.keenthemes.com/metronic8/react/docs/docs/utilities'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
+                    className='text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1'
                   >
                     Plugins &amp; Components
                   </a>
                   {/* end::Title */}
                   {/* begin::Description */}
-                  <div className='text-muted fw-bold fs-7 fs-lg-6'>
+                  <div className='text-muted fw-semibold fs-7 fs-lg-6'>
                     Check out our 300+ in-house components and customized 3rd-party plugins.
                   </div>
                   {/* end::Description */}
@@ -172,13 +172,13 @@ const HelpDrawer = () => {
                   {/* begin::Title */}
                   <Link
                     to='/builder'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
+                    className='text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1'
                   >
                     Layout Builder
                   </Link>
                   {/* end::Title */}
                   {/* begin::Description */}
-                  <div className='text-muted fw-bold fs-7 fs-lg-6'>
+                  <div className='text-muted fw-semibold fs-7 fs-lg-6'>
                     Dynamically modify and preview layout
                   </div>
                   {/* end::Description */}
@@ -209,13 +209,13 @@ const HelpDrawer = () => {
                   {/* begin::Title */}
                   <a
                     href='https://preview.keenthemes.com/metronic8/react/docs/docs/changelog'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
+                    className='text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1'
                   >
                     What's New
                   </a>
                   {/* end::Title */}
                   {/* begin::Description */}
-                  <div className='text-muted fw-bold fs-7 fs-lg-6'>
+                  <div className='text-muted fw-semibold fs-7 fs-lg-6'>
                     Latest features and improvements added with our users feedback in mind.
                   </div>
                   {/* end::Description */}
@@ -236,7 +236,7 @@ const HelpDrawer = () => {
       </div>
       {/* end::Card */}
     </div>
-  );
-};
+  )
+}
 
-export {HelpDrawer};
+export {HelpDrawer}

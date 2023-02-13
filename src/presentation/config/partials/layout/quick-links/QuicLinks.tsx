@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {type FC} from 'react';
-import {Link} from 'react-router-dom';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import React, {FC} from 'react'
+import {Link} from 'react-router-dom'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const QuickLinks: FC = () => (
   <div
@@ -10,9 +10,9 @@ const QuickLinks: FC = () => (
   >
     <div
       className='d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-10'
-      style={{backgroundImage: `url('${toAbsoluteUrl('/media/misc/pattern-1.jpg')}')`}}
+      style={{backgroundImage: `url('${toAbsoluteUrl('/media/misc/menu-header-bg.jpg')}')`}}
     >
-      <h3 className='text-white fw-bold mb-3'>Quick Links</h3>
+      <h3 className='text-white fw-semibold mb-3'>Quick Links</h3>
 
       <span className='badge bg-primary py-2 px-3'>25 pending tasks</span>
     </div>
@@ -27,7 +27,7 @@ const QuickLinks: FC = () => (
             path='/media/icons/duotune/finance/fin009.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
           />
-          <span className='fs-5 fw-bold text-gray-800 mb-0'>Accounting</span>
+          <span className='fs-5 fw-semibold text-gray-800 mb-0'>Accounting</span>
           <span className='fs-7 text-gray-400'>eCommerce</span>
         </a>
       </div>
@@ -41,35 +41,29 @@ const QuickLinks: FC = () => (
             path='/media/icons/duotune/communication/com010.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
           />
-          <span className='fs-5 fw-bold text-gray-800 mb-0'>Administration</span>
+          <span className='fs-5 fw-semibold text-gray-800 mb-0'>Administration</span>
           <span className='fs-7 text-gray-400'>Console</span>
         </a>
       </div>
 
       <div className='col-6'>
-        <a
-          href='src/presentation/config/partials/layout/quick-links#'
-          className='d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end'
-        >
+        <a href='src/presentation/config/partials/layout/quick-links#' className='d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end'>
           <KTSVG
             path='/media/icons/duotune/abstract/abs042.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
           />
-          <span className='fs-5 fw-bold text-gray-800 mb-0'>Projects</span>
+          <span className='fs-5 fw-semibold text-gray-800 mb-0'>Projects</span>
           <span className='fs-7 text-gray-400'>Pending Tasks</span>
         </a>
       </div>
 
       <div className='col-6'>
-        <a
-          href='src/presentation/config/partials/layout/quick-links#'
-          className='d-flex flex-column flex-center h-100 p-6 bg-hover-light'
-        >
+        <a href='src/presentation/config/partials/layout/quick-links#' className='d-flex flex-column flex-center h-100 p-6 bg-hover-light'>
           <KTSVG
             path='/media/icons/duotune/finance/fin006.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
           />
-          <span className='fs-5 fw-bold text-gray-800 mb-0'>Customers</span>
+          <span className='fs-5 fw-semibold text-gray-800 mb-0'>Customers</span>
           <span className='fs-7 text-gray-400'>Latest cases</span>
         </a>
       </div>
@@ -81,6 +75,6 @@ const QuickLinks: FC = () => (
       </Link>
     </div>
   </div>
-);
+)
 
-export {QuickLinks};
+export {QuickLinks}

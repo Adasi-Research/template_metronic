@@ -1,63 +1,72 @@
-import {useEffect} from 'react';
-import {Outlet, useLocation} from 'react-router-dom';
-import {HeaderWrapper} from './components/header';
-import {RightToolbar} from '../partials/layout/RightToolbar';
-import {ScrollTop} from './components/scroll-top';
-import {Content} from './components/content';
-import {FooterWrapper} from './components/footer';
-import {Sidebar} from './components/sidebar';
-import {
-  DrawerMessenger,
-  ActivityDrawer,
-  InviteUsers,
-  UpgradePlan,
-  ThemeModeProvider,
-} from '../partials';
-import {PageDataProvider} from './core';
-import {reInitMenu} from '../helpers';
-import {ToolbarWrapper} from './components/toolbar';
+import {FC, useEffect} from 'react'
+import {Outlet} from 'react-router-dom'
+import {AsideDefault} from './components/aside/AsideDefault'
+import {Footer} from './components/Footer'
+import {HeaderWrapper} from './components/header/HeaderWrapper'
+import {Toolbar} from './components/toolbar/Toolbar'
+import {ScrollTop} from './components/ScrollTop'
+import {Content} from './components/Content'
+import {PageDataProvider, useLayout} from './core'
+import {useLocation} from 'react-router-dom'
+import {DrawerMessenger, RightToolbar, ActivityDrawer, InviteUsers, UpgradePlan} from '../partials'
+import {MenuComponent} from '../assets/ts/components'
+import clsx from 'clsx'
+import {WithChildren} from '../helpers'
+import {themeModeSwitchHelper, useThemeMode} from '../partials/layout/theme-mode/ThemeModeProvider'
 
-const MasterLayout = () => {
-  const location = useLocation();
+const MasterLayout: FC<WithChildren> = ({children}) => {
+  const {classes} = useLayout()
+  const {mode} = useThemeMode()
+  const location = useLocation()
+
   useEffect(() => {
-    reInitMenu();
-  }, [location.key]);
+    setTimeout(() => {
+      MenuComponent.reinitialization()
+    }, 500)
+  }, [location.key])
+
+  useEffect(() => {
+    themeModeSwitchHelper(mode)
+  }, [mode])
 
   return (
     <PageDataProvider>
-      <ThemeModeProvider>
-        <div className='d-flex flex-column flex-root app-root' id='kt_app_root'>
-          <div className='app-page flex-column flex-column-fluid' id='kt_app_page'>
-            <HeaderWrapper />
-            <div className='app-wrapper flex-column flex-row-fluid' id='kt_app_wrapper'>
-              <Sidebar />
-              <div className='app-main flex-column flex-row-fluid' id='kt_app_main'>
-                <div className='d-flex flex-column flex-column-fluid'>
-                  <ToolbarWrapper />
-                  <Content>
-                    <Outlet />
-                  </Content>
-                </div>
-                <FooterWrapper />
-              </div>
+      <div className='page d-flex flex-row flex-column-fluid'>
+        <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
+          <HeaderWrapper />
+
+          <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
+            <Toolbar />
+            <div
+              className={clsx(
+                'd-flex flex-column-fluid align-items-start',
+                classes.contentContainer.join(' ')
+              )}
+              id='kt_post'
+            >
+              <AsideDefault />
+              <Content>
+                <Outlet />
+              </Content>
             </div>
           </div>
+          <Footer />
         </div>
+      </div>
 
-        {/* begin:: Drawers */}
-        <ActivityDrawer />
-        <RightToolbar />
-        <DrawerMessenger />
-        {/* end:: Drawers */}
+      {/* begin:: Drawers */}
+      <ActivityDrawer />
+      <RightToolbar />
+      <DrawerMessenger />
+      {/* end:: Drawers */}
 
-        {/* begin:: Modals */}
-        <InviteUsers />
-        <UpgradePlan />
-        {/* end:: Modals */}
-        <ScrollTop />
-      </ThemeModeProvider>
+      {/* begin:: Modals */}
+      <InviteUsers />
+      <UpgradePlan />
+      {/* end:: Modals */}
+      <ScrollTop />
     </PageDataProvider>
-  );
-};
+  )
+}
 
-export {MasterLayout};
+export {MasterLayout}

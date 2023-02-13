@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {StepProps} from '../IAppModels';
+import {StepProps} from '../IAppModels'
 
 const Step2 = ({data, updateData}: StepProps) => {
   return (
@@ -132,7 +132,7 @@ const Step2 = ({data, updateData}: StepProps) => {
         {/*end::Form Group */}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Step2};
+export {Step2}

@@ -1,17 +1,14 @@
-import clsx from 'clsx';
-import {KTSVG} from '../../../helpers';
-import {ThemeModeComponent} from '../../../assets/ts/layout';
-import {type ThemeModeType, useThemeMode} from './ThemeModeProvider';
+import clsx from 'clsx'
+import {KTSVG} from '../../../helpers'
+import {ThemeModeType, useThemeMode, systemMode} from './ThemeModeProvider'
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 type Props = {
-  toggleBtnClass?: string;
-  toggleBtnIconClass?: string;
-  menuPlacement?: string;
-  menuTrigger?: string;
-};
-
-const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark';
+  toggleBtnClass?: string
+  toggleBtnIconClass?: string
+  menuPlacement?: string
+  menuTrigger?: string
+}
 
 const ThemeModeSwitcher = ({
   toggleBtnClass = '',
@@ -19,18 +16,18 @@ const ThemeModeSwitcher = ({
   menuPlacement = 'bottom-end',
   menuTrigger = "{default: 'click', lg: 'hover'}",
 }: Props) => {
-  const {mode, menuMode, updateMode, updateMenuMode} = useThemeMode();
-  const calculatedMode = mode === 'system' ? systemMode : mode;
+  const {mode, menuMode, updateMode, updateMenuMode} = useThemeMode()
+  const calculatedMode = mode === 'system' ? systemMode : mode
   const switchMode = (_mode: ThemeModeType) => {
-    updateMenuMode(_mode);
-    updateMode(_mode);
-  };
+    updateMenuMode(_mode)
+    updateMode(_mode)
+  }
 
   return (
     <>
       {/* begin::Menu toggle */}
-      <a
-        href='src/presentation/config/partials/layout/theme-mode#'
+      <div
+
         className={clsx('btn btn-icon ', toggleBtnClass)}
         data-kt-menu-trigger={menuTrigger}
         data-kt-menu-attach='parent'
@@ -49,7 +46,7 @@ const ThemeModeSwitcher = ({
             className={clsx('theme-dark-hide', toggleBtnIconClass)}
           />
         )}
-      </a>
+      </div>
       {/* begin::Menu toggle */}
 
       {/* begin::Menu */}
@@ -59,58 +56,52 @@ const ThemeModeSwitcher = ({
       >
         {/* begin::Menu item */}
         <div className='menu-item px-3 my-0'>
-          <a
-            href='src/presentation/config/partials/layout/theme-mode#'
+          <div
+
             className={clsx('menu-link px-3 py-2', {active: menuMode === 'light'})}
-            onClick={() => {
-              switchMode('light');
-            }}
+            onClick={() => switchMode('light')}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen060.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>Light</span>
-          </a>
+          </div>
         </div>
         {/* end::Menu item */}
 
         {/* begin::Menu item */}
         <div className='menu-item px-3 my-0'>
-          <a
-            href='src/presentation/config/partials/layout/theme-mode#'
+          <div
+
             className={clsx('menu-link px-3 py-2', {active: menuMode === 'dark'})}
-            onClick={() => {
-              switchMode('dark');
-            }}
+            onClick={() => switchMode('dark')}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen061.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>Dark</span>
-          </a>
+          </div>
         </div>
         {/* end::Menu item */}
 
         {/* begin::Menu item */}
         <div className='menu-item px-3 my-0'>
-          <a
-            href='src/presentation/config/partials/layout/theme-mode#'
+          <div
+
             className={clsx('menu-link px-3 py-2', {active: menuMode === 'system'})}
-            onClick={() => {
-              switchMode('system');
-            }}
+            onClick={() => switchMode('system')}
           >
             <span className='menu-icon' data-kt-element='icon'>
               <KTSVG path='/media/icons/duotune/general/gen062.svg' className='svg-icon-3' />
             </span>
             <span className='menu-title'>System</span>
-          </a>
+          </div>
         </div>
         {/* end::Menu item */}
       </div>
       {/* end::Menu */}
     </>
-  );
-};
+  )
+}
 
-export {ThemeModeSwitcher};
+export {ThemeModeSwitcher}

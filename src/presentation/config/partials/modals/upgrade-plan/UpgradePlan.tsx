@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {type FC, useState} from 'react';
-import {KTSVG} from '../../../helpers';
+import React, {FC, useState} from 'react'
+import {KTSVG} from '../../../helpers'
 
 const plans = [
   {
@@ -130,11 +130,11 @@ const plans = [
     default: false,
     custom: true,
   },
-];
+]
 
 const UpgradePlan: FC = () => {
-  const [currentState, setCurrentState] = useState<'month' | 'annual'>('month');
-  const [selected, setSelected] = useState('Startup');
+  const [currentState, setCurrentState] = useState<'month' | 'annual'>('month')
+  const [selected, setSelected] = useState('Startup')
 
   return (
     <div className='modal fade' id='kt_modal_upgrade_plan' aria-hidden='true'>
@@ -150,12 +150,9 @@ const UpgradePlan: FC = () => {
             <div className='mb-13 text-center'>
               <h1 className='mb-3'>Upgrade a Plan</h1>
 
-              <div className='text-muted fw-bold fs-5'>
+              <div className='text-muted fw-semibold fs-5'>
                 If you need more info, please check{' '}
-                <a
-                  href='src/presentation/config/partials/modals/upgrade-plan#'
-                  className='link-primary fw-bolder'
-                >
+                <a href='src/presentation/config/partials/modals/upgrade-plan#' className='link-primary fw-bold'>
                   Pricing Guidelines
                 </a>
                 .
@@ -171,7 +168,7 @@ const UpgradePlan: FC = () => {
                     (currentState === 'month' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState('month');
+                    setCurrentState('month')
                   }}
                   data-kt-plan='month'
                 >
@@ -184,7 +181,7 @@ const UpgradePlan: FC = () => {
                     (currentState === 'annual' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState('annual');
+                    setCurrentState('annual')
                   }}
                   data-kt-plan='annual'
                 >
@@ -199,10 +196,10 @@ const UpgradePlan: FC = () => {
                       return (
                         <div
                           onClick={() => {
-                            setSelected(plan.title);
+                            setSelected(plan.title)
                           }}
                           className={
-                            'nav-link btn btn-outline btn-outline-dashed btn-color-dark d-flex flex-stack text-start p-6 ' +
+                            `nav-link btn btn-outline btn-outline-dashed btn-color-dark d-flex flex-stack text-start p-6 ` +
                             (index !== plans.length - 1 && 'mb-6 ') +
                             (plan.default && 'active ') +
                             (!plan.custom && 'btn-active btn-active-primary ')
@@ -219,14 +216,12 @@ const UpgradePlan: FC = () => {
                                 name='plan'
                                 value={plan.title}
                                 checked={selected === plan.title}
-                                onChange={(e) => {
-                                  setSelected(e.target.value);
-                                }}
+                                onChange={(e) => setSelected(e.target.value)}
                               />
                             </div>
 
                             <div className='flex-grow-1'>
-                              <h2 className='d-flex align-items-center fs-2 fw-bolder flex-wrap'>
+                              <h2 className='d-flex align-items-center fs-2 fw-bold flex-wrap'>
                                 {plan.title}
 
                                 {plan.label && (
@@ -235,7 +230,7 @@ const UpgradePlan: FC = () => {
                                   </span>
                                 )}
                               </h2>
-                              <div className='fw-bold opacity-50'>{plan.subTitle}</div>
+                              <div className='fw-semibold opacity-50'>{plan.subTitle}</div>
                             </div>
                           </div>
 
@@ -247,7 +242,7 @@ const UpgradePlan: FC = () => {
                               <>
                                 <span className='mb-2'>$</span>
 
-                                <span className='fs-3x fw-bolder'>
+                                <span className='fs-3x fw-bold'>
                                   {currentState === 'month' ? plan.priceMonth : plan.priceAnnual}
                                 </span>
 
@@ -258,7 +253,7 @@ const UpgradePlan: FC = () => {
                             )}
                           </div>
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 </div>
@@ -271,29 +266,29 @@ const UpgradePlan: FC = () => {
                           {!plan.custom && (
                             <>
                               <div
-                                className={'tab-pane fade' + (plan.default && 'show active')}
+                                className={`tab-pane fade` + (plan.default && 'show active')}
                                 id={`kt_upgrade_plan_${index}`}
                                 key={index}
                               >
                                 <div className='pb-5'>
-                                  <h2 className='fw-bolder text-dark'>What’s in Startup Plan?</h2>
+                                  <h2 className='fw-bold text-dark'>What’s in Startup Plan?</h2>
 
-                                  <div className='text-gray-400 fw-bold'>{plan.description}</div>
+                                  <div className='text-gray-400 fw-semibold'>{plan.description}</div>
                                 </div>
 
                                 <div className='pt-1'>
-                                  {plan.features.map((feature, i) => {
+                                  {plan.features!.map((feature, i) => {
                                     return (
                                       <div
                                         className={
-                                          'd-flex align-items-center' +
-                                          (i !== plan.features.length - 1 && ' mb-7')
+                                          `d-flex align-items-center` +
+                                          (i !== plan.features!.length - 1 && ' mb-7')
                                         }
                                         key={`${i}-${feature.title}`}
                                       >
                                         {feature.supported && (
                                           <>
-                                            <span className='fw-bold fs-5 text-gray-700 flex-grow-1'>
+                                            <span className='fw-semibold fs-5 text-gray-700 flex-grow-1'>
                                               {feature.title}
                                             </span>
 
@@ -305,7 +300,7 @@ const UpgradePlan: FC = () => {
                                         )}
                                         {!feature.supported && (
                                           <>
-                                            <span className='fw-bold fs-5 text-gray-400 flex-grow-1'>
+                                            <span className='fw-semibold fs-5 text-gray-400 flex-grow-1'>
                                               {feature.title}
                                             </span>
                                             <KTSVG
@@ -315,14 +310,14 @@ const UpgradePlan: FC = () => {
                                           </>
                                         )}
                                       </div>
-                                    );
+                                    )
                                   })}
                                 </div>
                               </div>
                             </>
                           )}
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 </div>
@@ -342,7 +337,7 @@ const UpgradePlan: FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {UpgradePlan};
+export {UpgradePlan}

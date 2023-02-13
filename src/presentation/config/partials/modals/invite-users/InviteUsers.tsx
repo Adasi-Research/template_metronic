@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {type FC} from 'react';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import React, {FC} from 'react'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const InviteUsers: FC = () => {
   const users = [
@@ -106,7 +106,7 @@ const InviteUsers: FC = () => {
       email: 'ana.cf@limtel.com',
       access: '3',
     },
-  ];
+  ]
 
   return (
     <div className='modal fade' id='kt_modal_invite_friends' aria-hidden='true'>
@@ -122,12 +122,9 @@ const InviteUsers: FC = () => {
             <div className='text-center mb-13'>
               <h1 className='mb-3'>Invite a Friend</h1>
 
-              <div className='text-muted fw-bold fs-5'>
+              <div className='text-muted fw-semibold fs-5'>
                 If you need more info, please check out
-                <a
-                  href='src/presentation/config/partials/modals/invite-users#'
-                  className='link-primary fw-bolder'
-                >
+                <a href='src/presentation/config/partials/modals/invite-users#' className='link-primary fw-bold'>
                   {' '}
                   FAQ Page
                 </a>
@@ -135,7 +132,7 @@ const InviteUsers: FC = () => {
               </div>
             </div>
 
-            <div className='btn btn-light-primary fw-bolder w-100 mb-8'>
+            <div className='btn btn-light-primary fw-bold w-100 mb-8'>
               <img
                 alt='Logo'
                 src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
@@ -145,7 +142,7 @@ const InviteUsers: FC = () => {
             </div>
 
             <div className='separator d-flex flex-center mb-8'>
-              <span className='text-uppercase bg-body fs-7 fw-bold text-muted px-3'>or</span>
+              <span className='text-uppercase bg-body fs-7 fw-semibold text-muted px-3'>or</span>
             </div>
 
             <textarea
@@ -155,7 +152,7 @@ const InviteUsers: FC = () => {
             ></textarea>
 
             <div className='mb-10'>
-              <div className='fs-6 fw-bold mb-2'>Your Invitations</div>
+              <div className='fs-6 fw-semibold mb-2'>Your Invitations</div>
 
               <div className='mh-300px scroll-y me-n7 pe-7'>
                 {users.map((user, i) => {
@@ -181,11 +178,11 @@ const InviteUsers: FC = () => {
                         <div className='ms-5'>
                           <a
                             href='src/presentation/config/partials/modals/invite-users#'
-                            className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
+                            className='fs-5 fw-bold text-gray-900 text-hover-primary mb-2'
                           >
                             {user.name}
                           </a>
-                          <div className='fw-bold text-muted'>{user.email}</div>
+                          <div className='fw-semibold text-muted'>{user.email}</div>
                         </div>
                       </div>
 
@@ -202,13 +199,13 @@ const InviteUsers: FC = () => {
                         </select>
                       </div>
                     </div>
-                  );
+                  )
                 })}
               </div>
             </div>
 
             <div className='d-flex flex-stack'>
-              <div className='me-5 fw-bold'>
+              <div className='me-5 fw-semibold'>
                 <label className='fs-6'>Adding Users by Team Members</label>
                 <div className='fs-7 text-muted'>
                   If you need more info, please check budget planning
@@ -218,14 +215,14 @@ const InviteUsers: FC = () => {
               <label className='form-check form-switch form-check-custom form-check-solid'>
                 <input className='form-check-input' type='checkbox' value='1' />
 
-                <span className='form-check-label fw-bold text-muted'>Allowed</span>
+                <span className='form-check-label fw-semibold text-muted'>Allowed</span>
               </label>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {InviteUsers};
+export {InviteUsers}

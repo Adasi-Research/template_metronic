@@ -6,7 +6,7 @@ import {Chart, registerables} from 'chart.js';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 // Apps
-import {MetronicI18nProvider} from '../presentation/config/i18n/Metronici18n';
+import {MetronicI18nProvider} from '@/presentation/config/i18n/Metronici18n';
 /**
  * TIP: Replace this style import with rtl styles to enable rtl mode
  *
@@ -15,11 +15,11 @@ import {MetronicI18nProvider} from '../presentation/config/i18n/Metronici18n';
 import '../presentation/config/assets/sass/style.scss';
 import '../presentation/config/assets/sass/plugins.scss';
 import '../presentation/config/assets/sass/style.react.scss';
-import {AuthProvider, setupAxios} from '../presentation/app/modules/auth';
+import {AuthProvider, setupAxios} from '@/presentation/app/modules/auth';
 import {Provider} from 'react-redux';
-import {store} from '../presentation/config/store';
-import {makeLogin} from '@/main/factories/modules/auth/login.factory';
+import {store} from '@/presentation/config/store';
 import {Router} from '@/presentation/app/routing';
+import {ThemeModeProvider} from "@/presentation/config/partials/layout/theme-mode/ThemeModeProvider";
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic Metronic mocks and returns it.
@@ -37,16 +37,18 @@ Chart.register(...registerables);
 const queryClient = new QueryClient();
 const container = document.getElementById('main');
 if (container) {
-  createRoot(container).render(
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <MetronicI18nProvider>
-          <AuthProvider>
-            <Router />
-          </AuthProvider>
-        </MetronicI18nProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </Provider>
-    </QueryClientProvider>
-  );
+    createRoot(container).render(
+        <QueryClientProvider client={queryClient}>
+            <ThemeModeProvider>
+                <Provider store={store}>
+                    <MetronicI18nProvider>
+                        <AuthProvider>
+                            <Router/>
+                        </AuthProvider>
+                    </MetronicI18nProvider>
+                    <ReactQueryDevtools initialIsOpen={false}/>
+                </Provider>
+            </ThemeModeProvider>
+        </QueryClientProvider>
+    );
 }

@@ -1,5 +1,5 @@
-import {FC} from 'react';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {FC} from 'react'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const Item2: FC = () => {
   return (
@@ -17,7 +17,7 @@ const Item2: FC = () => {
 
       <div className='timeline-content mb-10 mt-n2'>
         <div className='overflow-auto pe-3'>
-          <div className='fs-5 fw-bold mb-2'>
+          <div className='fs-5 fw-semibold mb-2'>
             Invitation for crafting engaging designs that speak human workshop
           </div>
 
@@ -37,7 +37,7 @@ const Item2: FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Item2};
+export {Item2}

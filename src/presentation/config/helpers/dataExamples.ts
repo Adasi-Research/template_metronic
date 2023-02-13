@@ -1,9 +1,9 @@
 export interface MessageModel {
-  user: number;
-  type: 'in' | 'out';
-  text: string;
-  time: string;
-  template?: boolean;
+  user: number
+  type: 'in' | 'out'
+  text: string
+  time: string
+  template?: boolean
 }
 
 const defaultMessages: Array<MessageModel> = [
@@ -63,15 +63,15 @@ const defaultMessages: Array<MessageModel> = [
     text: 'Right before vacation season we have the next Big Deal for you.',
     time: 'Just now',
   },
-];
+]
 
 export interface UserInfoModel {
-  initials?: {label: string; state: 'warning' | 'danger' | 'primary' | 'success' | 'info'};
-  name: string;
-  avatar?: string;
-  email: string;
-  position: string;
-  online: boolean;
+  initials?: {label: string; state: 'warning' | 'danger' | 'primary' | 'success' | 'info'}
+  name: string
+  avatar?: string
+  email: string
+  position: string
+  online: boolean
 }
 
 const defaultUserInfos: Array<UserInfoModel> = [
@@ -188,21 +188,21 @@ const defaultUserInfos: Array<UserInfoModel> = [
     position: 'Accountant',
     online: true,
   },
-];
+]
 
 const messageFromClient: MessageModel = {
   user: 4,
   type: 'in',
   text: 'Thank you for your awesome support!',
   time: 'Just now',
-};
+}
 
 export interface AlertModel {
-  title: string;
-  description: string;
-  time: string;
-  icon: string;
-  state: 'primary' | 'danger' | 'warning' | 'success' | 'info';
+  title: string
+  description: string
+  time: string
+  icon: string
+  state: 'primary' | 'danger' | 'warning' | 'success' | 'info'
 }
 
 const defaultAlerts: Array<AlertModel> = [
@@ -255,12 +255,12 @@ const defaultAlerts: Array<AlertModel> = [
     icon: 'icons/duotune/art/art002.svg',
     state: 'warning',
   },
-];
+]
 export interface LogModel {
-  code: string;
-  state: 'success' | 'danger' | 'warning';
-  message: string;
-  time: string;
+  code: string
+  state: 'success' | 'danger' | 'warning'
+  message: string
+  time: string
 }
 
 const defaultLogs: Array<LogModel> = [
@@ -276,6 +276,6 @@ const defaultLogs: Array<LogModel> = [
   {code: '500 ERR', state: 'danger', message: 'Refund process', time: 'Jul 10'},
   {code: '500 ERR', state: 'danger', message: 'Withdrawal process', time: 'Sep 10'},
   {code: '500 ERR', state: 'danger', message: 'Mail tasks', time: 'Dec 10'},
-];
+]
 
-export {defaultMessages, defaultUserInfos, defaultAlerts, defaultLogs, messageFromClient};
+export {defaultMessages, defaultUserInfos, defaultAlerts, defaultLogs, messageFromClient}

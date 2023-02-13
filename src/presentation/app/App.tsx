@@ -1,10 +1,9 @@
-import React, {Suspense} from 'react';
-
-import {Outlet} from 'react-router-dom';
-import {I18nProvider} from '../config/i18n/i18nProvider';
-import {LayoutProvider, LayoutSplashScreen} from '../config/layout/core';
-import {MasterInit} from '../config/layout/MasterInit';
-import {AuthInit} from './modules/auth';
+import {Suspense} from 'react'
+import {Outlet} from 'react-router-dom'
+import {I18nProvider} from '../config/i18n/i18nProvider'
+import {LayoutProvider, LayoutSplashScreen} from '../config/layout/core'
+import {MasterInit} from '../config/layout/MasterInit'
+import {AuthInit} from './modules/auth'
 
 const App = () => {
   return (
@@ -18,7 +17,7 @@ const App = () => {
         </LayoutProvider>
       </I18nProvider>
     </Suspense>
-  );
-};
+  )
+}
 
-export {App};
+export {App}

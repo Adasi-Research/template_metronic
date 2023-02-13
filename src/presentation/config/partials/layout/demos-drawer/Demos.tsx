@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
-import {toAbsoluteUrl} from '../../../helpers';
+import clsx from 'clsx'
+import {FC} from 'react'
+import {toAbsoluteUrl} from '../../../helpers'
+import {useThemeMode} from '../theme-mode/ThemeModeProvider'
 
 const Demos: FC = () => {
   const demos = [
@@ -47,11 +49,11 @@ const Demos: FC = () => {
     {
       name: 'demo13',
     },
-  ];
-
+  ]
+  const {mode} = useThemeMode()
   return (
     <div className='mb-0'>
-      <h3 className='fw-bolder text-center mb-6'>{process.env.REACT_APP_THEME_NAME} React Demos</h3>
+      <h3 className='fw-bold text-center mb-6'>{process.env.REACT_APP_THEME_NAME} React Demos</h3>
 
       <div className='row g-5'>
         {demos.map((item, index) => (
@@ -81,7 +83,11 @@ const Demos: FC = () => {
                   </a>
                 )}
                 {!item.available && (
-                  <div className='badge badge-white px-6 py-4 fw-bold fs-base shadow'>
+                  <div
+                    className={clsx('badge px-6 py-4 fw-semibold fs-base shadow', {
+                      'badge-white': mode === 'light',
+                    })}
+                  >
                     Coming soon
                   </div>
                 )}
@@ -91,7 +97,7 @@ const Demos: FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Demos};
+export {Demos}

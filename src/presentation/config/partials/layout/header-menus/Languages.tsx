@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx';
-import {type FC} from 'react';
-import {toAbsoluteUrl} from '../../../helpers';
-import {useLang, setLanguage} from '../../../i18n/Metronici18n';
+import clsx from 'clsx'
+import {FC} from 'react'
+import {toAbsoluteUrl} from '../../../helpers'
+import {useLang, setLanguage} from '../../../i18n/Metronici18n'
 
 const languages = [
   {
@@ -35,11 +35,11 @@ const languages = [
     name: 'French',
     flag: toAbsoluteUrl('/media/flags/france.svg'),
   },
-];
+]
 
 const Languages: FC = () => {
-  const lang = useLang();
-  const currentLanguage = languages.find((x) => x.lang === lang);
+  const lang = useLang()
+  const currentLanguage = languages.find((x) => x.lang === lang)
   return (
     <div
       className='menu-item px-5'
@@ -67,7 +67,7 @@ const Languages: FC = () => {
             className='menu-item px-3'
             key={l.lang}
             onClick={() => {
-              setLanguage(l.lang);
+              setLanguage(l.lang)
             }}
           >
             <a
@@ -83,7 +83,7 @@ const Languages: FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Languages};
+export {Languages}

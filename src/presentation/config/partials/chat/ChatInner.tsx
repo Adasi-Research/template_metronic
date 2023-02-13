@@ -1,26 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {type FC, useState} from 'react';
-import clsx from 'clsx';
+import {FC, useState} from 'react'
+import clsx from 'clsx'
 import {
   toAbsoluteUrl,
   defaultMessages,
   defaultUserInfos,
-  type MessageModel,
-  type UserInfoModel,
+  MessageModel,
+  UserInfoModel,
   messageFromClient,
-} from '../../helpers';
+} from '../../helpers'
 
 type Props = {
-  isDrawer?: boolean;
-};
+  isDrawer?: boolean
+}
 
-const bufferMessages = defaultMessages;
+const bufferMessages = defaultMessages
 
 const ChatInner: FC<Props> = ({isDrawer = false}) => {
-  const [chatUpdateFlag, toggleChatUpdateFlat] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>('');
-  const [messages, setMessages] = useState<MessageModel[]>(bufferMessages);
-  const [userInfos] = useState<UserInfoModel[]>(defaultUserInfos);
+  const [chatUpdateFlag, toggleChatUpdateFlat] = useState<boolean>(false)
+  const [message, setMessage] = useState<string>('')
+  const [messages, setMessages] = useState<MessageModel[]>(bufferMessages)
+  const [userInfos] = useState<UserInfoModel[]>(defaultUserInfos)
 
   const sendMessage = () => {
     const newMessage: MessageModel = {
@@ -28,25 +28,25 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
       type: 'out',
       text: message,
       time: 'Just now',
-    };
+    }
 
-    bufferMessages.push(newMessage);
-    setMessages(bufferMessages);
-    toggleChatUpdateFlat(!chatUpdateFlag);
-    setMessage('');
+    bufferMessages.push(newMessage)
+    setMessages(bufferMessages)
+    toggleChatUpdateFlat(!chatUpdateFlag)
+    setMessage('')
     setTimeout(() => {
-      bufferMessages.push(messageFromClient);
-      setMessages(() => bufferMessages);
-      toggleChatUpdateFlat((flag) => !flag);
-    }, 1000);
-  };
+      bufferMessages.push(messageFromClient)
+      setMessages(() => bufferMessages)
+      toggleChatUpdateFlat((flag) => !flag)
+    }, 1000)
+  }
 
   const onEnterPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.keyCode === 13 && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
+    if (e.keyCode === 13 && e.shiftKey === false) {
+      e.preventDefault()
+      sendMessage()
     }
-  };
+  }
 
   return (
     <div
@@ -65,24 +65,22 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
             : '#kt_header, #kt_app_header, #kt_app_toolbar, #kt_toolbar, #kt_footer, #kt_app_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer'
         }
         data-kt-scroll-wrappers={
-          isDrawer
-            ? '#kt_drawer_chat_messenger_body'
-            : '#kt_content, #kt_app_content, #kt_chat_messenger_body'
+          isDrawer ? '#kt_drawer_chat_messenger_body' : '#kt_content, #kt_app_content, #kt_chat_messenger_body'
         }
         data-kt-scroll-offset={isDrawer ? '0px' : '5px'}
       >
         {messages.map((message, index) => {
-          const userInfo = userInfos[message.user];
-          const state = message.type === 'in' ? 'info' : 'primary';
-          const templateAttr = {};
+          const userInfo = userInfos[message.user]
+          const state = message.type === 'in' ? 'info' : 'primary'
+          const templateAttr = {}
           if (message.template) {
             Object.defineProperty(templateAttr, 'data-kt-element', {
               value: `template-${message.type}`,
-            });
+            })
           }
           const contentClass = `${isDrawer ? '' : 'd-flex'} justify-content-${
             message.type === 'in' ? 'start' : 'end'
-          } mb-10`;
+          } mb-10`
           return (
             <div
               key={`message${index}`}
@@ -104,7 +102,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
                       <div className='ms-3'>
                         <a
                           href='src/presentation/config/partials/chat#'
-                          className='fs-5 fw-bolder text-gray-900 text-hover-primary me-1'
+                          className='fs-5 fw-bold text-gray-900 text-hover-primary me-1'
                         >
                           {userInfo.name}
                         </a>
@@ -117,7 +115,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
                         <span className='text-muted fs-7 mb-1'>{message.time}</span>
                         <a
                           href='src/presentation/config/partials/chat#'
-                          className='fs-5 fw-bolder text-gray-900 text-hover-primary ms-1'
+                          className='fs-5 fw-bold text-gray-900 text-hover-primary ms-1'
                         >
                           You
                         </a>
@@ -133,7 +131,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
                   className={clsx(
                     'p-5 rounded',
                     `bg-light-${state}`,
-                    'text-dark fw-bold mw-lg-400px',
+                    'text-dark fw-semibold mw-lg-400px',
                     `text-${message.type === 'in' ? 'start' : 'end'}`
                   )}
                   data-kt-element='message-text'
@@ -141,7 +139,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
                 ></div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
 
@@ -155,9 +153,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
           data-kt-element='input'
           placeholder='Type a message'
           value={message}
-          onChange={(e) => {
-            setMessage(e.target.value);
-          }}
+          onChange={(e) => setMessage(e.target.value)}
           onKeyDown={onEnterPress}
         ></textarea>
 
@@ -191,7 +187,7 @@ const ChatInner: FC<Props> = ({isDrawer = false}) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {ChatInner};
+export {ChatInner}

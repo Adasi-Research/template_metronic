@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC} from 'react'
 
 const DemosToggleDrawer: FC = () => (
   <button
@@ -12,6 +12,6 @@ const DemosToggleDrawer: FC = () => (
   >
     <span id='kt_engage_demos_label'>Demos</span>
   </button>
-);
+)
 
-export {DemosToggleDrawer};
+export {DemosToggleDrawer}

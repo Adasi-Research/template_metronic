@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {type FC} from 'react';
-import {KTSVG, toAbsoluteUrl} from '../../../helpers';
+import {FC} from 'react'
+import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 
 const Item4: FC = () => {
   return (
@@ -18,19 +18,13 @@ const Item4: FC = () => {
 
       <div className='timeline-content mb-10 mt-n1'>
         <div className='pe-3 mb-5'>
-          <div className='fs-5 fw-bold mb-2'>
+          <div className='fs-5 fw-semibold mb-2'>
             Task{' '}
-            <a
-              href='src/presentation/config/partials/content/activity#'
-              className='text-primary fw-bolder me-1'
-            >
+            <a href='src/presentation/config/partials/content/activity#' className='text-primary fw-bold me-1'>
               #45890
             </a>
             merged with{' '}
-            <a
-              href='src/presentation/config/partials/content/activity#'
-              className='text-primary fw-bolder me-1'
-            >
+            <a href='src/presentation/config/partials/content/activity#' className='text-primary fw-bold me-1'>
               #45890
             </a>{' '}
             in “Ads Pro Admin Dashboard project:
@@ -52,7 +46,7 @@ const Item4: FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export {Item4};
+export {Item4}
